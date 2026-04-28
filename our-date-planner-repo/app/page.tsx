@@ -16,8 +16,10 @@ export default function HomePage() {
   }, [router]);
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-zinc-950 text-zinc-300">
-      Loading Our Date Planner ❤️
+    <main className="flex min-h-screen items-center justify-center text-zinc-300">
+      <div className="rounded-lg border border-white/10 bg-white/[0.045] px-5 py-3 text-sm shadow-2xl shadow-black/30">
+        Loading Our Date Planner
+      </div>
     </main>
   );
 }

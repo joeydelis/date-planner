@@ -1,5 +1,6 @@
 "use client";
 
+import { Copy, Link2 } from "lucide-react";
 import { useState } from "react";
 import { createCouple } from "@/lib/couples";
 
@@ -27,33 +28,52 @@ export default function InvitePanel({ onCreated }: Props) {
   async function shareInvite() {
     if (!link) return;
 
-    if (navigator.share) {
-      await navigator.share({
-        title: "Join me on Our Date Planner ❤️",
-        text: "Let's plan date nights together.",
-        url: link,
-      });
-      return;
-    }
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: "Join me on Our Date Planner",
+          text: "Let's plan date nights together.",
+          url: link,
+        });
+        return;
+      }
 
-    await navigator.clipboard.writeText(link);
-    setStatus("Link copied");
+      await navigator.clipboard.writeText(link);
+      setStatus("Link copied");
+    } catch {
+      setStatus("Copy failed. Select the link manually.");
+    }
   }
 
   return (
-    <div className="rounded-3xl border border-white/10 bg-zinc-900 p-5 text-white">
-      <h2 className="text-xl font-semibold">Invite your partner</h2>
-      <p className="mt-2 text-sm text-zinc-400">Create a one-time invite link. Once your partner joins, the link expires.</p>
+    <div className="rounded-lg border border-white/10 bg-white/[0.045] p-5 text-white shadow-2xl shadow-black/30 backdrop-blur">
+      <div className="flex items-start gap-3">
+        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-300/10 text-teal-200">
+          <Link2 size={19} />
+        </div>
+        <div>
+          <h2 className="text-lg font-semibold tracking-tight">Invite your partner</h2>
+          <p className="mt-1 text-sm leading-6 text-zinc-400">Create a one-time invite link. Once your partner joins, the link expires.</p>
+        </div>
+      </div>
 
-      <button onClick={generateInvite} className="mt-5 w-full rounded-2xl bg-pink-500 px-4 py-3 font-semibold text-white">
-        Generate Invite Link 🔗
+      <button
+        onClick={generateInvite}
+        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-teal-300 px-4 py-3 font-semibold text-zinc-950 transition hover:bg-teal-200"
+      >
+        <Link2 size={18} />
+        Generate Invite Link
       </button>
 
       {link && (
         <div className="mt-4 space-y-3">
-          <div className="break-all rounded-2xl bg-white/5 p-3 text-xs text-zinc-300">{link}</div>
-          <button onClick={shareInvite} className="w-full rounded-2xl bg-white/10 px-4 py-3 text-sm font-medium text-white">
-            Share / Copy Link 📤
+          <div className="break-all rounded-lg border border-white/10 bg-zinc-950/70 p-3 text-xs leading-5 text-zinc-300">{link}</div>
+          <button
+            onClick={shareInvite}
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/[0.06] px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+          >
+            <Copy size={16} />
+            Share / Copy Link
           </button>
         </div>
       )}

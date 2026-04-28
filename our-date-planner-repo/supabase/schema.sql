@@ -45,6 +45,21 @@ begin
 end;
 $$;
 
+create or replace function public.is_couple_member(target_couple_id uuid)
+returns boolean
+language sql
+security definer
+set search_path = public
+stable
+as $$
+  select exists (
+    select 1
+    from public.couple_members
+    where couple_id = target_couple_id
+      and user_id = auth.uid()
+  );
+$$;
+
 drop trigger if exists on_auth_user_created on auth.users;
 create trigger on_auth_user_created
 after insert on auth.users
@@ -86,14 +101,14 @@ drop policy if exists "Members can read their couple" on public.couples;
 create policy "Members can read their couple"
 on public.couples for select
 using (
-  id in (select couple_id from public.couple_members where user_id = auth.uid())
+  public.is_couple_member(id)
   or invite_used = false
 );
 
 drop policy if exists "Members can update their couple" on public.couples;
 create policy "Members can update their couple"
 on public.couples for update
-using (id in (select couple_id from public.couple_members where user_id = auth.uid()) or invite_used = false);
+using (public.is_couple_member(id) or invite_used = false);
 
 drop policy if exists "Users can join/create memberships" on public.couple_members;
 create policy "Users can join/create memberships"
@@ -105,7 +120,7 @@ create policy "Members can read couple memberships"
 on public.couple_members for select
 using (
   user_id = auth.uid()
-  or couple_id in (select couple_id from public.couple_members where user_id = auth.uid())
+  or public.is_couple_member(couple_id)
 );
 
 drop policy if exists "Users can leave their couple" on public.couple_members;
@@ -116,19 +131,19 @@ using (user_id = auth.uid());
 drop policy if exists "Members can read items" on public.list_items;
 create policy "Members can read items"
 on public.list_items for select
-using (couple_id in (select couple_id from public.couple_members where user_id = auth.uid()));
+using (public.is_couple_member(couple_id));
 
 drop policy if exists "Members can insert items" on public.list_items;
 create policy "Members can insert items"
 on public.list_items for insert
-with check (couple_id in (select couple_id from public.couple_members where user_id = auth.uid()));
+with check (public.is_couple_member(couple_id));
 
 drop policy if exists "Members can update items" on public.list_items;
 create policy "Members can update items"
 on public.list_items for update
-using (couple_id in (select couple_id from public.couple_members where user_id = auth.uid()));
+using (public.is_couple_member(couple_id));
 
 drop policy if exists "Members can delete items" on public.list_items;
 create policy "Members can delete items"
 on public.list_items for delete
-using (couple_id in (select couple_id from public.couple_members where user_id = auth.uid()));
+using (public.is_couple_member(couple_id));

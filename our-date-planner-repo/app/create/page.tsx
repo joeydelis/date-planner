@@ -7,10 +7,11 @@ export default function CreatePage() {
   const router = useRouter();
 
   return (
-    <main className="min-h-screen bg-zinc-950 p-4 text-white">
-      <div className="mx-auto max-w-md pt-8">
-        <h1 className="text-3xl font-semibold">Create Couple ❤️</h1>
-        <p className="mt-2 text-zinc-400">Generate a one-time invite link for your partner.</p>
+    <main className="min-h-screen px-4 py-8 text-white">
+      <div className="mx-auto max-w-md">
+        <p className="text-xs font-medium uppercase tracking-[0.28em] text-teal-200/70">Setup</p>
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight">Create Couple</h1>
+        <p className="mt-2 leading-7 text-zinc-400">Generate a one-time invite link for your partner.</p>
         <div className="mt-6">
           <InvitePanel onCreated={() => router.push("/dashboard")} />
         </div>

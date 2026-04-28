@@ -21,7 +21,8 @@ export default function JoinInvitePage() {
 
       try {
         await joinCoupleByInvite(params.code);
-        setStatus("Connected ❤️ Redirecting...");
+        sessionStorage.removeItem("pending-invite");
+        setStatus("Connected. Redirecting...");
         window.setTimeout(() => router.replace("/dashboard"), 1000);
       } catch (error) {
         setStatus(error instanceof Error ? error.message : "Could not join invite.");
@@ -32,9 +33,9 @@ export default function JoinInvitePage() {
   }, [params.code, router]);
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-zinc-950 p-6 text-center text-white">
-      <section className="max-w-sm rounded-3xl border border-white/10 bg-zinc-900 p-6">
-        <h1 className="text-2xl font-semibold">Joining Couple</h1>
+    <main className="flex min-h-screen items-center justify-center p-6 text-center text-white">
+      <section className="max-w-sm rounded-lg border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-black/40 backdrop-blur">
+        <h1 className="text-2xl font-semibold tracking-tight">Joining Couple</h1>
         <p className="mt-3 text-zinc-400">{status}</p>
       </section>
     </main>

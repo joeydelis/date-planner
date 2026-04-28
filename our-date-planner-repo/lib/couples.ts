@@ -1,8 +1,22 @@
 import { supabase } from "@/lib/supabase";
 
+function getErrorMessage(error: unknown, fallback: string) {
+  if (error instanceof Error) return error.message;
+  if (typeof error === "object" && error && "message" in error) {
+    const message = (error as { message?: unknown }).message;
+    if (typeof message === "string") return message;
+  }
+  return fallback;
+}
+
+function throwSupabaseError(error: unknown, fallback: string): never {
+  console.error(fallback, error);
+  throw new Error(getErrorMessage(error, fallback));
+}
+
 export async function getCurrentUser() {
   const { data, error } = await supabase.auth.getUser();
-  if (error) throw error;
+  if (error) throwSupabaseError(error, "Could not load the current user.");
   return data.user;
 }
 
@@ -14,10 +28,11 @@ export async function getUserCoupleId(): Promise<string | null> {
     .from("couple_members")
     .select("couple_id")
     .eq("user_id", user.id)
-    .maybeSingle();
+    .order("created_at", { ascending: false })
+    .limit(1);
 
-  if (error) throw error;
-  return data?.couple_id ?? null;
+  if (error) throwSupabaseError(error, "Could not load your couple.");
+  return data?.[0]?.couple_id ?? null;
 }
 
 export async function createCouple() {
@@ -34,24 +49,30 @@ export async function createCouple() {
     return data;
   }
 
+  const coupleId = crypto.randomUUID();
   const inviteCode = crypto.randomUUID();
 
-  const { data: couple, error: coupleError } = await supabase
-    .from("couples")
-    .insert({ invite_code: inviteCode, invite_used: false })
-    .select()
-    .single();
+  const { error: coupleError } = await supabase.from("couples").insert({
+    id: coupleId,
+    invite_code: inviteCode,
+    invite_used: false,
+  });
 
-  if (coupleError) throw coupleError;
+  if (coupleError) throwSupabaseError(coupleError, "Could not create invite.");
 
   const { error: memberError } = await supabase.from("couple_members").insert({
-    couple_id: couple.id,
+    couple_id: coupleId,
     user_id: user.id,
     role: "owner",
   });
 
-  if (memberError) throw memberError;
-  return couple;
+  if (memberError) throwSupabaseError(memberError, "Could not add you to the couple.");
+
+  return {
+    id: coupleId,
+    invite_code: inviteCode,
+    invite_used: false,
+  };
 }
 
 export async function joinCoupleByInvite(inviteCode: string) {
@@ -67,7 +88,7 @@ export async function joinCoupleByInvite(inviteCode: string) {
     .eq("invite_code", inviteCode)
     .maybeSingle();
 
-  if (coupleError) throw coupleError;
+  if (coupleError) throwSupabaseError(coupleError, "Could not load invite.");
   if (!couple) throw new Error("This invite link is invalid.");
   if (couple.invite_used) throw new Error("This invite link has already been used.");
 
@@ -76,7 +97,7 @@ export async function joinCoupleByInvite(inviteCode: string) {
     .select("*", { count: "exact", head: true })
     .eq("couple_id", couple.id);
 
-  if (countError) throw countError;
+  if (countError) throwSupabaseError(countError, "Could not check invite members.");
   if ((count ?? 0) >= 2) throw new Error("This couple is already full.");
 
   const { error: memberError } = await supabase.from("couple_members").insert({
@@ -85,14 +106,14 @@ export async function joinCoupleByInvite(inviteCode: string) {
     role: "member",
   });
 
-  if (memberError) throw memberError;
+  if (memberError) throwSupabaseError(memberError, "Could not join couple.");
 
   const { error: updateError } = await supabase
     .from("couples")
     .update({ invite_used: true })
     .eq("id", couple.id);
 
-  if (updateError) throw updateError;
+  if (updateError) throwSupabaseError(updateError, "Could not mark invite as used.");
   return couple;
 }
 
@@ -105,5 +126,5 @@ export async function leaveCouple() {
     .delete()
     .eq("user_id", user.id);
 
-  if (error) throw error;
+  if (error) throwSupabaseError(error, "Could not leave couple.");
 }

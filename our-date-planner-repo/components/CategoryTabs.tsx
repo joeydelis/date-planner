@@ -8,25 +8,23 @@ type Props = {
 };
 
 const categories: { id: ListType; label: string }[] = [
-  { id: "movies", label: "Movies" },
-  { id: "boardgames", label: "Board Games" },
-  { id: "videogames", label: "Video Games" },
-  { id: "trails", label: "Trails" },
-  { id: "thriftstores", label: "Thrift" },
-  { id: "restaurants", label: "Food" },
+  { id: "home", label: "At home" },
+  { id: "fun", label: "Get out" },
+  { id: "creative", label: "Make" },
+  { id: "food", label: "Eat" },
 ];
 
 export default function CategoryTabs({ selected, onChange }: Props) {
   return (
-    <div className="no-scrollbar flex gap-2 overflow-x-auto px-4 pb-3">
+    <div className="no-scrollbar flex gap-2 overflow-x-auto pb-3">
       {categories.map((category) => (
         <button
           key={category.id}
           onClick={() => onChange(category.id)}
-          className={`whitespace-nowrap rounded-full px-4 py-2 text-sm transition ${
+          className={`whitespace-nowrap rounded-lg border px-3.5 py-2 text-sm font-medium transition ${
             selected === category.id
-              ? "bg-pink-500 text-white shadow-lg shadow-pink-500/20"
-              : "bg-white/5 text-zinc-400"
+              ? "border-teal-300/40 bg-teal-300/15 text-teal-100 shadow-[0_0_24px_rgba(45,212,191,0.12)]"
+              : "border-white/10 bg-white/[0.04] text-zinc-400 hover:border-white/20 hover:text-zinc-200"
           }`}
         >
           {category.label}

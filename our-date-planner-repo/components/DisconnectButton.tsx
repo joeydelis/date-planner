@@ -1,5 +1,6 @@
 "use client";
 
+import { LogOut } from "lucide-react";
 import { leaveCouple } from "@/lib/couples";
 
 export default function DisconnectButton() {
@@ -11,8 +12,12 @@ export default function DisconnectButton() {
   }
 
   return (
-    <button onClick={disconnect} className="text-sm text-red-300/80 underline underline-offset-4">
-      Disconnect
+    <button
+      onClick={disconnect}
+      className="inline-flex h-9 items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 text-sm font-medium text-zinc-300 transition hover:border-red-300/30 hover:bg-red-500/10 hover:text-red-100"
+    >
+      <LogOut size={15} />
+      Leave
     </button>
   );
 }

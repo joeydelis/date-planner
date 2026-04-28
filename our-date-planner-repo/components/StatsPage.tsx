@@ -20,38 +20,52 @@ export default function StatsPage({ coupleId }: Props) {
         .order("plays", { ascending: false });
       setItems((data ?? []) as ListItem[]);
     }
+
     loadStats();
+
+    const channel = supabase
+      .channel(`stats-${coupleId}`)
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "list_items", filter: `couple_id=eq.${coupleId}` },
+        loadStats
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, [coupleId]);
 
   const totalPicks = items.reduce((sum, item) => sum + item.plays, 0);
   const favorites = items.filter((item) => item.favorite).length;
 
   return (
-    <section className="px-4 pb-28 pt-4 text-white">
+    <section className="px-4 pb-28 pt-5 text-white">
       <div className="mb-6">
-        <p className="text-sm uppercase tracking-[0.3em] text-pink-300/70">Stats</p>
-        <h2 className="mt-1 text-3xl font-semibold">Your date history</h2>
+        <p className="text-xs font-medium uppercase tracking-[0.28em] text-teal-200/70">Stats</p>
+        <h2 className="mt-1 text-3xl font-semibold tracking-tight">Your date history</h2>
       </div>
 
       <div className="mb-5 grid grid-cols-2 gap-3">
-        <div className="rounded-3xl bg-pink-500/10 p-4">
-          <p className="text-sm text-pink-200/70">Total picks</p>
+        <div className="rounded-lg border border-teal-300/15 bg-teal-300/10 p-4 shadow-xl shadow-black/20">
+          <p className="text-sm text-teal-100/70">Total picks</p>
           <p className="mt-2 text-3xl font-semibold">{totalPicks}</p>
         </div>
-        <div className="rounded-3xl bg-purple-500/10 p-4">
-          <p className="text-sm text-purple-200/70">Favorites</p>
+        <div className="rounded-lg border border-rose-300/15 bg-rose-300/10 p-4 shadow-xl shadow-black/20">
+          <p className="text-sm text-rose-100/70">Favorites</p>
           <p className="mt-2 text-3xl font-semibold">{favorites}</p>
         </div>
       </div>
 
       <div className="space-y-3">
         {items.map((item, index) => (
-          <article key={item.id} className="flex items-center justify-between rounded-3xl border border-white/10 bg-zinc-900 p-4">
+          <article key={item.id} className="flex items-center justify-between rounded-lg border border-white/10 bg-white/[0.045] p-4 shadow-xl shadow-black/20">
             <div>
-              <p className="text-xs text-zinc-500">#{index + 1} · {item.type}</p>
-              <h3 className="font-medium">{item.name}</h3>
+              <p className="text-xs text-zinc-500">#{index + 1} / {item.type}</p>
+              <h3 className="font-medium tracking-tight">{item.name}</h3>
             </div>
-            <span className="rounded-full bg-white/5 px-3 py-1 text-sm text-zinc-300">{item.plays}</span>
+            <span className="rounded-lg border border-white/10 bg-white/[0.05] px-3 py-1 text-sm text-zinc-300">{item.plays}</span>
           </article>
         ))}
       </div>

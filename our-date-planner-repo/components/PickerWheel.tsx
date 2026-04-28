@@ -1,5 +1,6 @@
 "use client";
 
+import { Shuffle } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -32,13 +33,13 @@ export default function PickerWheel({ items, onPick }: Props) {
   const segmentAngle = items.length ? 360 / items.length : 360;
 
   return (
-    <div className="flex flex-col items-center gap-5">
+    <div className="flex flex-col items-center gap-5 rounded-lg border border-white/10 bg-white/[0.035] p-5 shadow-2xl shadow-black/30">
       <div className="relative">
-        <div className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 text-3xl">🔻</div>
+        <div className="absolute -top-2 left-1/2 z-10 h-5 w-5 -translate-x-1/2 rotate-45 border-l border-t border-teal-200 bg-teal-300 shadow-[0_0_24px_rgba(45,212,191,0.45)]" />
         <motion.div
           animate={{ rotate: rotation }}
           transition={{ duration: 3.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative flex h-72 w-72 items-center justify-center overflow-hidden rounded-full border-8 border-pink-400 bg-zinc-900 shadow-2xl shadow-pink-500/20"
+          className="relative flex h-72 w-72 items-center justify-center overflow-hidden rounded-full border border-white/15 bg-zinc-950 shadow-2xl shadow-black/50 ring-8 ring-white/[0.04]"
         >
           {items.length ? (
             items.slice(0, 12).map((item, index) => (
@@ -48,7 +49,7 @@ export default function PickerWheel({ items, onPick }: Props) {
                 style={{ transform: `rotate(${index * segmentAngle}deg)` }}
               >
                 <div
-                  className={`absolute bottom-0 h-36 w-36 origin-bottom-left ${index % 2 === 0 ? "bg-pink-500/80" : "bg-purple-500/70"}`}
+                  className={`absolute bottom-0 h-36 w-36 origin-bottom-left ${index % 2 === 0 ? "bg-teal-400/75" : "bg-slate-500/70"}`}
                   style={{ clipPath: "polygon(0 100%, 100% 0, 100% 100%)" }}
                 />
                 <span
@@ -62,17 +63,18 @@ export default function PickerWheel({ items, onPick }: Props) {
           ) : (
             <span className="px-8 text-center text-sm text-zinc-500">Add some ideas first</span>
           )}
-          <div className="absolute h-16 w-16 rounded-full border border-white/20 bg-zinc-950" />
-          <div className="absolute text-2xl">❤️</div>
+          <div className="absolute h-16 w-16 rounded-full border border-white/15 bg-zinc-950 shadow-xl shadow-black/50" />
+          <Shuffle className="absolute text-teal-100" size={24} />
         </motion.div>
       </div>
 
       <button
         onClick={spinWheel}
         disabled={!items.length || spinning}
-        className="rounded-full bg-pink-500 px-8 py-3 font-semibold text-white shadow-lg shadow-pink-500/25 disabled:cursor-not-allowed disabled:opacity-40"
+        className="inline-flex items-center justify-center gap-2 rounded-lg bg-teal-300 px-8 py-3 font-semibold text-zinc-950 shadow-lg shadow-teal-950/25 transition hover:bg-teal-200 disabled:cursor-not-allowed disabled:opacity-40"
       >
-        {spinning ? "Spinning..." : "Spin 🎡"}
+        <Shuffle size={18} />
+        {spinning ? "Spinning..." : "Spin"}
       </button>
     </div>
   );

@@ -1,4 +1,15 @@
-export type ListType = "movies" | "boardgames" | "videogames" | "trails" | "thriftstores" | "restaurants" | "custom";
+export type ListType =
+  | "home"
+  | "fun"
+  | "creative"
+  | "food"
+  | "movies"
+  | "boardgames"
+  | "videogames"
+  | "trails"
+  | "thriftstores"
+  | "restaurants"
+  | "custom";
 
 export type Tab = "lists" | "favorites" | "picker" | "stats";
 

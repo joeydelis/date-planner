@@ -1,0 +1,636 @@
+⚠ Turbopack's filesystem cache has been deleted because we previously detected an internal error in Turbopack. Builds or page loads may be slower as a result.
+[browser] @supabase/gotrue-js: Session as retrieved from URL expires in -154s, should have been closer to 3600s (file://C:/Users/joeyd/Downloads/our-date-planner/our-date-planner-repo/.next/dev/static/chunks/0h5u_%40supabase_auth-js_dist_module_0e_p2dr._.js:6803:25)
+[browser] @supabase/gotrue-js: Session as retrieved from URL was issued over 120s ago, URL could be stale 1777260352 1777263952 1777264106 (file://C:/Users/joeyd/Downloads/our-date-planner/our-date-planner-repo/.next/dev/static/chunks/0h5u_%40supabase_auth-js_dist_module_0e_p2dr._.js:6807:25)
+[browser] Could not create invite. {
+  code: [32m'42501'[39m,
+  details: [1mnull[22m,
+  hint: [1mnull[22m,
+  message: [32m'new row violates row-level security policy for table "couples"'[39m
+} 
+    at throwSupabaseError (lib/couples.ts:13:11)
+    at createCouple (lib/couples.ts:59:20)
+    at async generateInvite (components/InvitePanel.tsx:17:22)
+  11 |
+  12 | function throwSupabaseError(error: unknown, fallback: string): never {
+> 13 |   console.error(fallback, error);
+     |           ^
+  14 |   throw new Error(getErrorMessage(error, fallback));
+  15 | }
+  16 | (lib/couples.ts:13:11)
+[browser] Could not create invite. {
+  code: [32m'42501'[39m,
+  details: [1mnull[22m,
+  hint: [1mnull[22m,
+  message: [32m'new row violates row-level security policy for table "couples"'[39m
+} 
+    at throwSupabaseError (lib/couples.ts:13:11)
+    at createCouple (lib/couples.ts:60:20)
+    at async generateInvite (components/InvitePanel.tsx:17:22)
+  11 |
+  12 | function throwSupabaseError(error: unknown, fallback: string): never {
+> 13 |   console.error(fallback, error);
+     |           ^
+  14 |   throw new Error(getErrorMessage(error, fallback));
+  15 | }
+  16 | (lib/couples.ts:13:11)
+[browser] ⨯ unhandledRejection: NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied.
+NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied.
+[browser] ⨯ unhandledRejection: NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied.
+NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied.
+[browser] Could not load your couple. {
+  code: [32m'PGRST116'[39m,
+  details: [32m'Results contain 2 rows, application/vnd.pgrst.object+json requires 1 row'[39m,
+  hint: [1mnull[22m,
+  message: [32m'JSON object requested, multiple (or no) rows returned'[39m
+} 
+    at throwSupabaseError (lib/couples.ts:13:11)
+    at getUserCoupleId (lib/couples.ts:33:14)
+    at async load (app/dashboard/page.tsx:39:18)
+  11 |
+  12 | function throwSupabaseError(error: unknown, fallback: string): never {
+> 13 |   console.error(fallback, error);
+     |           ^
+  14 |   throw new Error(getErrorMessage(error, fallback));
+  15 | }
+  16 | (lib/couples.ts:13:11)
+[browser] ⨯ unhandledRejection: Error: JSON object requested, multiple (or no) rows returned
+    at throwSupabaseError (lib/couples.ts:14:9)
+    at getUserCoupleId (lib/couples.ts:33:14)
+    at async load (app/dashboard/page.tsx:39:18)
+  12 | function throwSupabaseError(error: unknown, fallback: string): never {
+  13 |   console.error(fallback, error);
+> 14 |   throw new Error(getErrorMessage(error, fallback));
+     |         ^
+  15 | }
+  16 |
+  17 | export async function getCurrentUser() {
+[browser] Could not load your couple. {
+  code: [32m'PGRST116'[39m,
+  details: [32m'Results contain 2 rows, application/vnd.pgrst.object+json requires 1 row'[39m,
+  hint: [1mnull[22m,
+  message: [32m'JSON object requested, multiple (or no) rows returned'[39m
+} 
+    at throwSupabaseError (lib/couples.ts:13:11)
+    at getUserCoupleId (lib/couples.ts:33:14)
+    at async load (app/dashboard/page.tsx:39:18)
+  11 |
+  12 | function throwSupabaseError(error: unknown, fallback: string): never {
+> 13 |   console.error(fallback, error);
+     |           ^
+  14 |   throw new Error(getErrorMessage(error, fallback));
+  15 | }
+  16 | (lib/couples.ts:13:11)
+[browser] ⨯ unhandledRejection: Error: JSON object requested, multiple (or no) rows returned
+    at throwSupabaseError (lib/couples.ts:14:9)
+    at getUserCoupleId (lib/couples.ts:33:14)
+    at async load (app/dashboard/page.tsx:39:18)
+  12 | function throwSupabaseError(error: unknown, fallback: string): never {
+  13 |   console.error(fallback, error);
+> 14 |   throw new Error(getErrorMessage(error, fallback));
+     |         ^
+  15 | }
+  16 |
+  17 | export async function getCurrentUser() {
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:9:1
+Module not found: Can't resolve '@/components/PartnerStatus'
+  [90m 7 |[0m [36mimport[0m [33mInvitePanel[0m [36mfrom[0m [32m"@/components/InvitePanel"[0m;
+  [90m 8 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m11 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+  [90m12 |[0m [36mimport[0m { getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+
+Import map: aliased to relative './components/PartnerStatus' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] TypeError: NetworkError when attempting to fetch resource.
+[browser] TypeError: NetworkError when attempting to fetch resource.
+[browser] TypeError: NetworkError when attempting to fetch resource.
+[browser] TypeError: NetworkError when attempting to fetch resource.
+[browser] TypeError: NetworkError when attempting to fetch resource.
+[browser] TypeError: Failed to fetch
+[browser] TypeError: NetworkError when attempting to fetch resource.
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+    at new Promise (<anonymous>)
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+[browser] "⨯ unhandledRejection:" {
+  code: [32m'PGRST205'[39m,
+  details: [1mnull[22m,
+  hint: [32m"Perhaps you meant the table 'public.couples'"[39m,
+  message: [32m"Could not find the table 'public.profiles' in the schema cache"[39m
+} 
+
+[browser] "⨯ unhandledRejection:" {
+  code: [32m'PGRST205'[39m,
+  details: [1mnull[22m,
+  hint: [32m"Perhaps you meant the table 'public.couples'"[39m,
+  message: [32m"Could not find the table 'public.profiles' in the schema cache"[39m
+} 
+
+[browser] "⨯ unhandledRejection:" {
+  code: [32m'PGRST205'[39m,
+  details: [1mnull[22m,
+  hint: [32m"Perhaps you meant the table 'public.couples'"[39m,
+  message: [32m"Could not find the table 'public.profiles' in the schema cache"[39m
+} 
+
+[browser] "⨯ unhandledRejection:" {
+  code: [32m'PGRST205'[39m,
+  details: [1mnull[22m,
+  hint: [32m"Perhaps you meant the table 'public.couples'"[39m,
+  message: [32m"Could not find the table 'public.profiles' in the schema cache"[39m
+} 
+
