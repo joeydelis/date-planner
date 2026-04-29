@@ -1,0 +1,292 @@
+"use client";
+
+import { Copy, Inbox, Send, UserRoundCheck, UserRoundPlus } from "lucide-react";
+import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase";
+import { normalizeUsername } from "@/lib/profiles";
+
+type Props = {
+  coupleId: string;
+};
+
+type PendingInvite = {
+  id: string;
+  couple_id: string;
+  from_user_id: string;
+  created_at: string;
+  profiles?: {
+    name: string | null;
+    username: string | null;
+  } | null;
+};
+
+type InviteRow = Omit<PendingInvite, "profiles"> & {
+  profiles?:
+    | {
+        name: string | null;
+        username: string | null;
+      }
+    | {
+        name: string | null;
+        username: string | null;
+      }[]
+    | null;
+};
+
+export default function PartnerStatus({ coupleId }: Props) {
+  const [currentUserId, setCurrentUserId] = useState<string | null>(null);
+  const [partner, setPartner] = useState<string | null>(null);
+  const [inviteLink, setInviteLink] = useState<string | null>(null);
+  const [inviteOpen, setInviteOpen] = useState(false);
+  const [username, setUsername] = useState("");
+  const [inbox, setInbox] = useState<PendingInvite[]>([]);
+  const [status, setStatus] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function loadPartner() {
+      const { data: userData } = await supabase.auth.getUser();
+      const userId = userData.user?.id;
+      setCurrentUserId(userId ?? null);
+      if (!userId) return;
+
+      const { data: members } = await supabase
+        .from("couple_members")
+        .select("user_id")
+        .eq("couple_id", coupleId);
+
+      const partnerMember = members?.find((member) => member.user_id !== userId);
+      if (!partnerMember) {
+        setPartner(null);
+
+        const { data: couple } = await supabase
+          .from("couples")
+          .select("invite_code, invite_used")
+          .eq("id", coupleId)
+          .maybeSingle();
+
+        if (couple && !couple.invite_used) {
+          setInviteLink(`${window.location.origin}/join/${couple.invite_code}`);
+        }
+
+        return;
+      }
+
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("name, username")
+        .eq("id", partnerMember.user_id)
+        .maybeSingle();
+
+      setPartner(profile?.username ? `@${profile.username}` : profile?.name ?? "your partner");
+      setInviteLink(null);
+    }
+
+    async function loadInbox() {
+      const { data } = await supabase
+        .from("couple_invites")
+        .select("id, couple_id, from_user_id, created_at, profiles:from_user_id(name, username)")
+        .eq("status", "pending")
+        .order("created_at", { ascending: false });
+
+      const invites = ((data ?? []) as InviteRow[]).map((invite) => ({
+        ...invite,
+        profiles: Array.isArray(invite.profiles) ? invite.profiles[0] ?? null : invite.profiles ?? null,
+      }));
+
+      setInbox(invites);
+    }
+
+    loadPartner();
+    loadInbox();
+
+    const channel = supabase
+      .channel(`invite-inbox-${coupleId}`)
+      .on("postgres_changes", { event: "*", schema: "public", table: "couple_invites" }, loadInbox)
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [coupleId]);
+
+  async function sendUsernameInvite() {
+    const normalized = normalizeUsername(username);
+    if (!normalized) return;
+    if (!currentUserId) {
+      setStatus("Please sign in again.");
+      return;
+    }
+
+    setStatus("Finding user...");
+    const { data: target, error: targetError } = await supabase
+      .from("profiles")
+      .select("id, username")
+      .eq("username", normalized)
+      .maybeSingle();
+
+    if (targetError || !target) {
+      setStatus("No user found with that username.");
+      return;
+    }
+    if (target.id === currentUserId) {
+      setStatus("That's you.");
+      return;
+    }
+
+    const { error } = await supabase.from("couple_invites").insert({
+      couple_id: coupleId,
+      from_user_id: currentUserId,
+      to_user_id: target.id,
+      status: "pending",
+    });
+
+    if (error) {
+      setStatus(error.code === "23505" ? "Invite already sent." : "Could not send invite.");
+      return;
+    }
+
+    setUsername("");
+    setStatus(`Invite sent to @${normalized}`);
+  }
+
+  async function shareInvite() {
+    if (!inviteLink) return;
+
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: "Join my date planner",
+          text: "Pick date ideas with me.",
+          url: inviteLink,
+        });
+        return;
+      }
+
+      await navigator.clipboard.writeText(inviteLink);
+      setStatus("Link copied");
+    } catch {
+      setStatus("Copy failed. Select the link manually.");
+    }
+  }
+
+  async function acceptInvite(invite: PendingInvite) {
+    if (!currentUserId) return;
+
+    const { error: leaveError } = await supabase.from("couple_members").delete().eq("user_id", currentUserId);
+    if (leaveError) {
+      setStatus("Could not switch planners.");
+      return;
+    }
+
+    const { error: memberError } = await supabase.from("couple_members").insert({
+      couple_id: invite.couple_id,
+      user_id: currentUserId,
+      role: "member",
+    });
+    if (memberError) {
+      setStatus("Could not join invite.");
+      return;
+    }
+
+    await supabase.from("couple_invites").update({ status: "accepted" }).eq("id", invite.id);
+    await supabase.from("couples").update({ invite_used: true }).eq("id", invite.couple_id);
+    window.location.reload();
+  }
+
+  async function declineInvite(invite: PendingInvite) {
+    await supabase.from("couple_invites").update({ status: "declined" }).eq("id", invite.id);
+    setInbox((current) => current.filter((entry) => entry.id !== invite.id));
+  }
+
+  return (
+    <div className="rounded-lg border border-white/10 bg-white/[0.045] px-4 py-3 text-sm text-zinc-300 shadow-xl shadow-black/20 backdrop-blur">
+      <div className="flex items-center gap-3">
+        <div className={`flex h-9 w-9 items-center justify-center rounded-lg ${partner ? "bg-teal-300/10 text-teal-200" : "bg-amber-300/10 text-amber-100"}`}>
+          {partner ? <UserRoundCheck size={18} /> : <UserRoundPlus size={18} />}
+        </div>
+        <div className="min-w-0 flex-1">
+          <p className="font-medium text-white">{partner ? `Planning with ${partner}` : "Solo date board"}</p>
+          <p className="truncate text-xs text-zinc-500">{partner ? "Shared ideas stay synced." : "Invite someone when a date deserves two calendars."}</p>
+        </div>
+        <button
+          onClick={() => setInviteOpen((open) => !open)}
+          className="inline-flex h-9 items-center gap-2 rounded-lg border border-white/10 bg-white/[0.06] px-3 text-xs font-medium text-white transition hover:bg-white/10"
+        >
+          <Send size={14} />
+          Invite
+        </button>
+      </div>
+
+      {inviteOpen && (
+        <div className="mt-4 space-y-4 border-t border-white/10 pt-4">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-teal-200/70">Invite by username</p>
+            <div className="mt-2 flex gap-2">
+              <div className="flex min-w-0 flex-1 items-center rounded-lg border border-white/10 bg-zinc-950/70 px-3">
+                <span className="text-zinc-500">@</span>
+                <input
+                  value={username}
+                  onChange={(event) => setUsername(event.target.value)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter") sendUsernameInvite();
+                  }}
+                  placeholder="username"
+                  className="min-w-0 flex-1 bg-transparent px-2 py-2.5 text-sm text-white outline-none placeholder:text-zinc-600"
+                />
+              </div>
+              <button onClick={sendUsernameInvite} className="rounded-lg bg-teal-300 px-3 text-sm font-semibold text-zinc-950 transition hover:bg-teal-200">
+                Send
+              </button>
+            </div>
+          </div>
+
+          {inviteLink && (
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">Invite link</p>
+              <div className="mt-2 flex gap-2">
+                <div className="min-w-0 flex-1 truncate rounded-lg border border-white/10 bg-zinc-950/70 px-3 py-2.5 text-xs text-zinc-400">{inviteLink}</div>
+                <button
+                  onClick={shareInvite}
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.06] px-3 text-sm font-medium text-white transition hover:bg-white/10"
+                >
+                  <Copy size={15} />
+                  Copy
+                </button>
+              </div>
+            </div>
+          )}
+
+          <div>
+            <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
+              <Inbox size={13} />
+              Inbox
+            </div>
+            <div className="mt-2 space-y-2">
+              {inbox.length ? (
+                inbox.map((invite) => (
+                  <div key={invite.id} className="rounded-lg border border-white/10 bg-zinc-950/50 p-3">
+                    <p className="text-sm text-white">
+                      {invite.profiles?.username ? `@${invite.profiles.username}` : invite.profiles?.name ?? "Someone"} invited you
+                    </p>
+                    <div className="mt-3 flex gap-2">
+                      <button onClick={() => acceptInvite(invite)} className="rounded-md bg-teal-300 px-3 py-2 text-xs font-semibold text-zinc-950">
+                        Accept
+                      </button>
+                      <button onClick={() => declineInvite(invite)} className="rounded-md border border-white/10 px-3 py-2 text-xs text-zinc-400">
+                        Decline
+                      </button>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <p className="rounded-lg border border-dashed border-white/10 px-3 py-3 text-xs text-zinc-600">No date invites yet.</p>
+              )}
+            </div>
+          </div>
+
+          {status && <p className="text-xs text-zinc-400">{status}</p>}
+        </div>
+      )}
+    </div>
+  );
+}
