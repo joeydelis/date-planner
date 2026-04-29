@@ -1199,3 +1199,5 @@
  GET /dashboard 200 in 52ms (next.js: 27ms, application-code: 25ms)
  GET /dashboard 200 in 17ms (next.js: 3ms, application-code: 15ms)
  GET /dashboard 200 in 87ms (next.js: 2ms, application-code: 85ms)
+ GET /dashboard 200 in 23ms (next.js: 2ms, application-code: 20ms)
+ GET /dashboard 200 in 23ms (next.js: 3ms, application-code: 20ms)
