@@ -14,7 +14,7 @@ export default function DisconnectButton() {
   return (
     <button
       onClick={disconnect}
-      className="inline-flex h-9 items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 text-sm font-medium text-zinc-300 transition hover:border-red-300/30 hover:bg-red-500/10 hover:text-red-100"
+      className="inline-flex h-9 items-center gap-2 rounded-lg border border-[#f3bfd0] bg-white/70 px-3 text-sm font-medium text-[#8b687e] shadow-sm transition hover:border-[#e06f92] hover:bg-[#fff0f5] hover:text-[#c7466f]"
     >
       <LogOut size={15} />
       Leave

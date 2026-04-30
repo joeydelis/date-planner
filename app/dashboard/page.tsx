@@ -60,7 +60,7 @@ export default function DashboardPage() {
   }
 
   if (loading) {
-    return <main className="flex min-h-screen items-center justify-center text-zinc-400">Loading...</main>;
+    return <main className="flex min-h-screen items-center justify-center text-[#8b687e]">Loading...</main>;
   }
 
   if (!username) {
@@ -68,16 +68,16 @@ export default function DashboardPage() {
   }
 
   if (!coupleId) {
-    return <main className="flex min-h-screen items-center justify-center text-zinc-400">Preparing your planner...</main>;
+    return <main className="flex min-h-screen items-center justify-center text-[#8b687e]">Preparing your planner...</main>;
   }
 
   return (
-    <main className="min-h-screen text-white">
+    <main className="min-h-screen text-[#493343]">
       <header className="mx-auto max-w-md px-4 pt-5">
         <div className="flex items-center justify-between gap-3">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.28em] text-teal-200/70">Our Date Planner</p>
-            <h1 className="mt-1 text-2xl font-semibold tracking-tight">Date planner</h1>
+            <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#e06f92]">Our Date Planner</p>
+            <h1 className="mt-1 text-2xl font-semibold tracking-tight text-[#3f2a39]">Date planner</h1>
           </div>
           <DisconnectButton />
         </div>

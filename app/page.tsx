@@ -16,8 +16,8 @@ export default function HomePage() {
   }, [router]);
 
   return (
-    <main className="flex min-h-screen items-center justify-center text-zinc-300">
-      <div className="rounded-lg border border-white/10 bg-white/[0.045] px-5 py-3 text-sm shadow-2xl shadow-black/30">
+    <main className="flex min-h-screen items-center justify-center text-[#493343]">
+      <div className="rounded-lg border border-[#f3bfd0] bg-white/80 px-5 py-3 text-sm font-medium shadow-2xl shadow-[#e06f92]/15">
         Loading Our Date Planner
       </div>
     </main>

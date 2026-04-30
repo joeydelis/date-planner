@@ -23,17 +23,17 @@ export default function UsernameSetup({ onSaved }: Props) {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center px-4 text-white">
-      <section className="w-full max-w-sm rounded-lg border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-black/40 backdrop-blur">
-        <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-teal-300/10 text-teal-200">
+    <main className="flex min-h-screen items-center justify-center px-4 text-[#493343]">
+      <section className="w-full max-w-sm rounded-lg border border-[#f3bfd0] bg-white/80 p-6 shadow-2xl shadow-[#e06f92]/15 backdrop-blur">
+        <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#ffe36e] text-[#8a6514]">
           <AtSign size={21} />
         </div>
-        <p className="mt-5 text-xs font-medium uppercase tracking-[0.28em] text-teal-200/70">Your username</p>
-        <h1 className="mt-2 text-3xl font-semibold tracking-tight">Pick a handle</h1>
-        <p className="mt-2 text-sm leading-6 text-zinc-400">Friends can invite you to a date planner with this username.</p>
+        <p className="mt-5 text-xs font-bold uppercase tracking-[0.28em] text-[#e06f92]">Your username</p>
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[#3f2a39]">Pick a handle</h1>
+        <p className="mt-2 text-sm leading-6 text-[#8b687e]">Friends can invite you to a date planner with this username.</p>
 
-        <div className="mt-6 flex items-center rounded-lg border border-white/10 bg-zinc-950/70 px-3">
-          <span className="text-zinc-500">@</span>
+        <div className="mt-6 flex items-center rounded-lg border border-[#f3bfd0] bg-white/85 px-3">
+          <span className="text-[#c77d9a]">@</span>
           <input
             value={username}
             onChange={(event) => setUsername(event.target.value)}
@@ -41,14 +41,14 @@ export default function UsernameSetup({ onSaved }: Props) {
               if (event.key === "Enter") save();
             }}
             placeholder="datebuddy"
-            className="min-w-0 flex-1 bg-transparent px-2 py-3 text-sm text-white outline-none placeholder:text-zinc-600"
+            className="min-w-0 flex-1 bg-transparent px-2 py-3 text-sm text-[#493343] outline-none placeholder:text-[#c9a7b8]"
           />
         </div>
 
-        <button onClick={save} className="mt-4 w-full rounded-lg bg-teal-300 px-4 py-3 font-semibold text-zinc-950 transition hover:bg-teal-200">
+        <button onClick={save} className="mt-4 w-full rounded-lg bg-[#ff8fab] px-4 py-3 font-semibold text-white shadow-lg shadow-[#ff8fab]/25 transition hover:bg-[#f7729b]">
           Save username
         </button>
-        {status && <p className="mt-3 text-sm text-zinc-400">{status}</p>}
+        {status && <p className="mt-3 text-sm text-[#8b687e]">{status}</p>}
       </section>
     </main>
   );

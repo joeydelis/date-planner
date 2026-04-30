@@ -199,18 +199,18 @@ export default function PartnerStatus({ coupleId }: Props) {
   }
 
   return (
-    <div className="rounded-lg border border-white/10 bg-white/[0.045] px-4 py-3 text-sm text-zinc-300 shadow-xl shadow-black/20 backdrop-blur">
+    <div className="rounded-lg border border-[#f3bfd0] bg-white/75 px-4 py-3 text-sm text-[#6f4d63] shadow-xl shadow-[#e06f92]/10 backdrop-blur">
       <div className="flex items-center gap-3">
-        <div className={`flex h-9 w-9 items-center justify-center rounded-lg ${partner ? "bg-teal-300/10 text-teal-200" : "bg-amber-300/10 text-amber-100"}`}>
+        <div className={`flex h-9 w-9 items-center justify-center rounded-lg ${partner ? "bg-[#b8f3df] text-[#24866f]" : "bg-[#ffe36e] text-[#8a6514]"}`}>
           {partner ? <UserRoundCheck size={18} /> : <UserRoundPlus size={18} />}
         </div>
         <div className="min-w-0 flex-1">
-          <p className="font-medium text-white">{partner ? `Planning with ${partner}` : "Solo date board"}</p>
-          <p className="truncate text-xs text-zinc-500">{partner ? "Shared ideas stay synced." : "Invite someone when a date deserves two calendars."}</p>
+          <p className="font-semibold text-[#3f2a39]">{partner ? `Planning with ${partner}` : "Solo date board"}</p>
+          <p className="truncate text-xs text-[#9a7187]">{partner ? "Shared ideas stay synced." : "Invite someone when a date deserves two calendars."}</p>
         </div>
         <button
           onClick={() => setInviteOpen((open) => !open)}
-          className="inline-flex h-9 items-center gap-2 rounded-lg border border-white/10 bg-white/[0.06] px-3 text-xs font-medium text-white transition hover:bg-white/10"
+          className="inline-flex h-9 items-center gap-2 rounded-lg border border-[#ffd67d] bg-[#fff3bf] px-3 text-xs font-semibold text-[#6e4d09] transition hover:bg-[#ffe36e]"
         >
           <Send size={14} />
           Invite
@@ -218,12 +218,12 @@ export default function PartnerStatus({ coupleId }: Props) {
       </div>
 
       {inviteOpen && (
-        <div className="mt-4 space-y-4 border-t border-white/10 pt-4">
+        <div className="mt-4 space-y-4 border-t border-[#f3bfd0] pt-4">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-teal-200/70">Invite by username</p>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#e06f92]">Invite by username</p>
             <div className="mt-2 flex gap-2">
-              <div className="flex min-w-0 flex-1 items-center rounded-lg border border-white/10 bg-zinc-950/70 px-3">
-                <span className="text-zinc-500">@</span>
+              <div className="flex min-w-0 flex-1 items-center rounded-lg border border-[#f3bfd0] bg-white/80 px-3">
+                <span className="text-[#c77d9a]">@</span>
                 <input
                   value={username}
                   onChange={(event) => setUsername(event.target.value)}
@@ -231,10 +231,10 @@ export default function PartnerStatus({ coupleId }: Props) {
                     if (event.key === "Enter") sendUsernameInvite();
                   }}
                   placeholder="username"
-                  className="min-w-0 flex-1 bg-transparent px-2 py-2.5 text-sm text-white outline-none placeholder:text-zinc-600"
+                  className="min-w-0 flex-1 bg-transparent px-2 py-2.5 text-sm text-[#493343] outline-none placeholder:text-[#c9a7b8]"
                 />
               </div>
-              <button onClick={sendUsernameInvite} className="rounded-lg bg-teal-300 px-3 text-sm font-semibold text-zinc-950 transition hover:bg-teal-200">
+              <button onClick={sendUsernameInvite} className="rounded-lg bg-[#ff8fab] px-3 text-sm font-semibold text-white transition hover:bg-[#f7729b]">
                 Send
               </button>
             </div>
@@ -242,12 +242,12 @@ export default function PartnerStatus({ coupleId }: Props) {
 
           {inviteLink && (
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">Invite link</p>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#9a7187]">Invite link</p>
               <div className="mt-2 flex gap-2">
-                <div className="min-w-0 flex-1 truncate rounded-lg border border-white/10 bg-zinc-950/70 px-3 py-2.5 text-xs text-zinc-400">{inviteLink}</div>
+                <div className="min-w-0 flex-1 truncate rounded-lg border border-[#f3bfd0] bg-white/80 px-3 py-2.5 text-xs text-[#8b687e]">{inviteLink}</div>
                 <button
                   onClick={shareInvite}
-                  className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.06] px-3 text-sm font-medium text-white transition hover:bg-white/10"
+                  className="inline-flex items-center gap-2 rounded-lg border border-[#f3bfd0] bg-white/80 px-3 text-sm font-semibold text-[#d65b82] transition hover:bg-[#fff0f5]"
                 >
                   <Copy size={15} />
                   Copy
@@ -257,34 +257,34 @@ export default function PartnerStatus({ coupleId }: Props) {
           )}
 
           <div>
-            <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#9a7187]">
               <Inbox size={13} />
               Inbox
             </div>
             <div className="mt-2 space-y-2">
               {inbox.length ? (
                 inbox.map((invite) => (
-                  <div key={invite.id} className="rounded-lg border border-white/10 bg-zinc-950/50 p-3">
-                    <p className="text-sm text-white">
+                  <div key={invite.id} className="rounded-lg border border-[#f3bfd0] bg-white/80 p-3">
+                    <p className="text-sm text-[#493343]">
                       {invite.profiles?.username ? `@${invite.profiles.username}` : invite.profiles?.name ?? "Someone"} invited you
                     </p>
                     <div className="mt-3 flex gap-2">
-                      <button onClick={() => acceptInvite(invite)} className="rounded-md bg-teal-300 px-3 py-2 text-xs font-semibold text-zinc-950">
+                      <button onClick={() => acceptInvite(invite)} className="rounded-md bg-[#b8f3df] px-3 py-2 text-xs font-semibold text-[#206b59]">
                         Accept
                       </button>
-                      <button onClick={() => declineInvite(invite)} className="rounded-md border border-white/10 px-3 py-2 text-xs text-zinc-400">
+                      <button onClick={() => declineInvite(invite)} className="rounded-md border border-[#f3bfd0] px-3 py-2 text-xs text-[#8b687e]">
                         Decline
                       </button>
                     </div>
                   </div>
                 ))
               ) : (
-                <p className="rounded-lg border border-dashed border-white/10 px-3 py-3 text-xs text-zinc-600">No date invites yet.</p>
+                <p className="rounded-lg border border-dashed border-[#f3bfd0] px-3 py-3 text-xs text-[#b48ca0]">No date invites yet.</p>
               )}
             </div>
           </div>
 
-          {status && <p className="text-xs text-zinc-400">{status}</p>}
+          {status && <p className="text-xs text-[#8b687e]">{status}</p>}
         </div>
       )}
     </div>

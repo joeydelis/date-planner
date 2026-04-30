@@ -30,12 +30,12 @@ export default function LoginPage() {
   }, [router]);
 
   return (
-    <main className="flex min-h-screen items-center justify-center p-4 text-white">
-      <section className="w-full max-w-sm rounded-lg border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-black/40 backdrop-blur">
+    <main className="flex min-h-screen items-center justify-center p-4 text-[#493343]">
+      <section className="w-full max-w-sm rounded-lg border border-[#f3bfd0] bg-white/80 p-6 shadow-2xl shadow-[#e06f92]/15 backdrop-blur">
         <div className="mb-6 text-center">
-          <p className="text-xs font-medium uppercase tracking-[0.28em] text-teal-200/70">Welcome</p>
-          <h1 className="mt-2 text-3xl font-semibold tracking-tight">Our Date Planner</h1>
-          <p className="mt-2 text-sm text-zinc-400">Sign in or sign up with a magic link to plan together.</p>
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#e06f92]">Welcome</p>
+          <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[#3f2a39]">Our Date Planner</h1>
+          <p className="mt-2 text-sm text-[#8b687e]">Sign in or sign up with a magic link to plan together.</p>
         </div>
 
         <Auth
@@ -45,13 +45,13 @@ export default function LoginPage() {
             variables: {
               default: {
                 colors: {
-                  brand: "#5eead4",
-                  brandAccent: "#2dd4bf",
-                  inputBackground: "#09090b",
-                  inputText: "#fff",
-                  inputBorder: "rgba(255,255,255,0.12)",
-                  defaultButtonBackground: "rgba(255,255,255,0.06)",
-                  defaultButtonBackgroundHover: "rgba(255,255,255,0.1)",
+                  brand: "#ff8fab",
+                  brandAccent: "#f7729b",
+                  inputBackground: "#ffffff",
+                  inputText: "#493343",
+                  inputBorder: "#f3bfd0",
+                  defaultButtonBackground: "#fff3bf",
+                  defaultButtonBackgroundHover: "#ffe36e",
                 },
               },
             },

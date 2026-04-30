@@ -46,20 +46,20 @@ export default function InvitePanel({ onCreated }: Props) {
   }
 
   return (
-    <div className="rounded-lg border border-white/10 bg-white/[0.045] p-5 text-white shadow-2xl shadow-black/30 backdrop-blur">
+    <div className="rounded-lg border border-[#f3bfd0] bg-white/80 p-5 text-[#493343] shadow-2xl shadow-[#e06f92]/15 backdrop-blur">
       <div className="flex items-start gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-300/10 text-teal-200">
+        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#ffe36e] text-[#8a6514]">
           <Link2 size={19} />
         </div>
         <div>
-          <h2 className="text-lg font-semibold tracking-tight">Invite your partner</h2>
-          <p className="mt-1 text-sm leading-6 text-zinc-400">Create a one-time invite link. Once your partner joins, the link expires.</p>
+          <h2 className="text-lg font-semibold tracking-tight text-[#3f2a39]">Invite your partner</h2>
+          <p className="mt-1 text-sm leading-6 text-[#8b687e]">Create a one-time invite link. Once your partner joins, the link expires.</p>
         </div>
       </div>
 
       <button
         onClick={generateInvite}
-        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-teal-300 px-4 py-3 font-semibold text-zinc-950 transition hover:bg-teal-200"
+        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#ff8fab] px-4 py-3 font-semibold text-white shadow-lg shadow-[#ff8fab]/25 transition hover:bg-[#f7729b]"
       >
         <Link2 size={18} />
         Generate Invite Link
@@ -67,10 +67,10 @@ export default function InvitePanel({ onCreated }: Props) {
 
       {link && (
         <div className="mt-4 space-y-3">
-          <div className="break-all rounded-lg border border-white/10 bg-zinc-950/70 p-3 text-xs leading-5 text-zinc-300">{link}</div>
+          <div className="break-all rounded-lg border border-[#f3bfd0] bg-white/85 p-3 text-xs leading-5 text-[#8b687e]">{link}</div>
           <button
             onClick={shareInvite}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/[0.06] px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[#ffd67d] bg-[#fff3bf] px-4 py-3 text-sm font-semibold text-[#6e4d09] transition hover:bg-[#ffe36e]"
           >
             <Copy size={16} />
             Share / Copy Link
@@ -78,7 +78,7 @@ export default function InvitePanel({ onCreated }: Props) {
         </div>
       )}
 
-      {status && <p className="mt-3 text-sm text-zinc-400">{status}</p>}
+      {status && <p className="mt-3 text-sm text-[#8b687e]">{status}</p>}
     </div>
   );
 }

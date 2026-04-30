@@ -33,10 +33,10 @@ export default function JoinInvitePage() {
   }, [params.code, router]);
 
   return (
-    <main className="flex min-h-screen items-center justify-center p-6 text-center text-white">
-      <section className="max-w-sm rounded-lg border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-black/40 backdrop-blur">
-        <h1 className="text-2xl font-semibold tracking-tight">Joining Couple</h1>
-        <p className="mt-3 text-zinc-400">{status}</p>
+    <main className="flex min-h-screen items-center justify-center p-6 text-center text-[#493343]">
+      <section className="max-w-sm rounded-lg border border-[#f3bfd0] bg-white/80 p-6 shadow-2xl shadow-[#e06f92]/15 backdrop-blur">
+        <h1 className="text-2xl font-semibold tracking-tight text-[#3f2a39]">Joining Couple</h1>
+        <p className="mt-3 text-[#8b687e]">{status}</p>
       </section>
     </main>
   );

@@ -1,7 +1,7 @@
 "use client";
 
-import { Heart, Plus, Trash2 } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { ExternalLink, Heart, MapPin, Plus, ShoppingBag, Sparkles, Trash2 } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import type { ListItem, ListType } from "@/types";
 import Toast from "@/components/Toast";
@@ -24,17 +24,67 @@ type DateSection = {
   legacyTypes: ListType[];
 };
 
+type Recommendation =
+  | { itemId: string; title: string; description: string }
+  | { itemId: string; title: string; description: string; href: string; actionLabel: string };
+
+type Coordinates = {
+  latitude: number;
+  longitude: number;
+};
+
+const defaultDateIdeas: Record<DateSection["id"], string[]> = {
+  home: [
+    "Random movie night",
+    "Cook a new recipe together",
+    "Board game night",
+    "Blanket fort dessert picnic",
+    "At-home spa night",
+  ],
+  fun: [
+    "Nearby trail or park",
+    "Thrift store treasure hunt",
+    "Mini golf",
+    "Arcade night",
+    "Farmers market stroll",
+  ],
+  creative: [
+    "Find a nearby craft spot",
+    "Pottery painting",
+    "Paint and sip night",
+    "Make custom candles",
+    "Take a dance class",
+  ],
+  food: [
+    "Random restaurant nearby",
+    "Dessert-only date",
+    "Try a new brunch spot",
+    "Picnic with takeout",
+    "Coffee shop crawl",
+  ],
+};
+
+const movieRecommendations: Record<string, string[]> = {
+  comedy: ["Palm Springs", "Crazy Rich Asians", "Game Night", "The Proposal"],
+  romance: ["About Time", "Set It Up", "The Big Sick", "Pride & Prejudice"],
+  thriller: ["Knives Out", "The Prestige", "Searching", "A Simple Favor"],
+  animated: ["Spider-Man: Into the Spider-Verse", "Howl's Moving Castle", "Ratatouille", "The Mitchells vs. the Machines"],
+  cozy: ["Julie & Julia", "The Holiday", "Little Women", "Paddington 2"],
+};
+
+const DEFAULT_SEED_KEY_PREFIX = "our-date-planner-default-ideas-seeded";
+
 const sections: DateSection[] = [
   {
     id: "home",
     eyebrow: "Stay at home",
     title: "At home",
     description: "Cozy nights, games, movies, and low-key plans without leaving the house.",
-    bg: "bg-[#1c1814]",
-    glow: "before:bg-[radial-gradient(ellipse_at_85%_5%,rgba(200,151,106,0.20),transparent_58%)]",
-    border: "border-[#c8976a]/20",
-    accent: "text-[#c8976a]",
-    text: "text-[#ede0cf]",
+    bg: "bg-[#fff2b8]",
+    glow: "before:bg-[radial-gradient(ellipse_at_85%_5%,rgba(255,143,171,0.34),transparent_58%)]",
+    border: "border-[#ffd67d]",
+    accent: "text-[#c98512]",
+    text: "text-[#4b3440]",
     legacyTypes: ["movies", "boardgames", "videogames"],
   },
   {
@@ -42,11 +92,11 @@ const sections: DateSection[] = [
     eyebrow: "Fun activity",
     title: "Get out",
     description: "Active dates, local adventures, thrift runs, trails, and things around town.",
-    bg: "bg-[#0f1e1b]",
-    glow: "before:bg-[radial-gradient(ellipse_at_15%_95%,rgba(91,168,152,0.22),transparent_58%)]",
-    border: "border-[#5ba898]/20",
-    accent: "text-[#5ba898]",
-    text: "text-[#d0e8e4]",
+    bg: "bg-[#dffbf1]",
+    glow: "before:bg-[radial-gradient(ellipse_at_15%_95%,rgba(255,227,110,0.48),transparent_58%)]",
+    border: "border-[#9ee7d0]",
+    accent: "text-[#1c8f79]",
+    text: "text-[#284c45]",
     legacyTypes: ["trails", "thriftstores"],
   },
   {
@@ -54,11 +104,11 @@ const sections: DateSection[] = [
     eyebrow: "Creative",
     title: "Make something",
     description: "Hands-on plans like painting, cooking projects, classes, and crafty experiments.",
-    bg: "bg-[#18162a]",
-    glow: "before:bg-[radial-gradient(ellipse_at_85%_95%,rgba(155,141,200,0.22),transparent_58%)]",
-    border: "border-[#9b8dc8]/20",
-    accent: "text-[#9b8dc8]",
-    text: "text-[#ddd8f0]",
+    bg: "bg-[#eee7ff]",
+    glow: "before:bg-[radial-gradient(ellipse_at_85%_95%,rgba(255,143,171,0.36),transparent_58%)]",
+    border: "border-[#c8b7ff]",
+    accent: "text-[#7f63c7]",
+    text: "text-[#433963]",
     legacyTypes: ["custom"],
   },
   {
@@ -66,11 +116,11 @@ const sections: DateSection[] = [
     eyebrow: "Food",
     title: "Let's eat",
     description: "Restaurants, treats, picnics, markets, and food ideas worth saving.",
-    bg: "bg-[#1e120c]",
-    glow: "before:bg-[radial-gradient(ellipse_at_15%_5%,rgba(217,123,84,0.22),transparent_58%)]",
-    border: "border-[#d97b54]/20",
-    accent: "text-[#d97b54]",
-    text: "text-[#f0d8cc]",
+    bg: "bg-[#ffe2d4]",
+    glow: "before:bg-[radial-gradient(ellipse_at_15%_5%,rgba(255,211,92,0.44),transparent_58%)]",
+    border: "border-[#ffb392]",
+    accent: "text-[#d66a46]",
+    text: "text-[#5d382f]",
     legacyTypes: ["restaurants"],
   },
 ];
@@ -83,14 +133,26 @@ function getSectionForItem(item: ListItem) {
   return sections.find((section) => itemBelongsToSection(item, section)) ?? sections[0];
 }
 
+function hasRecommendationLink(recommendation: Recommendation): recommendation is Recommendation & { href: string; actionLabel: string } {
+  return "href" in recommendation;
+}
+
 export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
   const [items, setItems] = useState<ListItem[]>([]);
   const [selectedSectionId, setSelectedSectionId] = useState<DateSection["id"] | null>(null);
   const [drafts, setDrafts] = useState<Record<string, string>>({});
   const [addingSection, setAddingSection] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
+  const [movieGenre, setMovieGenre] = useState("comedy");
+  const [pricePoint, setPricePoint] = useState("$$");
+  const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
+  const [locatingItemId, setLocatingItemId] = useState<string | null>(null);
+  const [manualLocationItemId, setManualLocationItemId] = useState<string | null>(null);
+  const [zipCode, setZipCode] = useState("");
+  const seededRef = useRef(false);
 
   useEffect(() => {
+    seededRef.current = false;
     fetchItems();
 
     const channel = supabase
@@ -124,7 +186,42 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
       .eq("couple_id", coupleId)
       .order("created_at", { ascending: true });
 
-    if (!error) setItems((data ?? []) as ListItem[]);
+    if (error) return;
+
+    const loadedItems = (data ?? []) as ListItem[];
+    setItems(loadedItems);
+
+    if (!favoritesOnly && !seededRef.current && !localStorage.getItem(`${DEFAULT_SEED_KEY_PREFIX}-${coupleId}`)) {
+      seededRef.current = true;
+      await seedDefaultIdeas(loadedItems);
+    }
+  }
+
+  async function seedDefaultIdeas(existingItems: ListItem[]) {
+    const existingNames = new Set(existingItems.map((item) => item.name.trim().toLowerCase()));
+    const rows = sections.flatMap((section) =>
+      defaultDateIdeas[section.id]
+        .filter((name) => !existingNames.has(name.toLowerCase()))
+        .map((name) => ({
+          couple_id: coupleId,
+          type: section.id,
+          name,
+          plays: 0,
+          favorite: false,
+          checkout: false,
+        }))
+    );
+
+    if (!rows.length) {
+      localStorage.setItem(`${DEFAULT_SEED_KEY_PREFIX}-${coupleId}`, "true");
+      return;
+    }
+
+    const { error } = await supabase.from("list_items").insert(rows);
+    if (!error) {
+      localStorage.setItem(`${DEFAULT_SEED_KEY_PREFIX}-${coupleId}`, "true");
+      fetchItems();
+    }
   }
 
   async function addItem(section: DateSection) {
@@ -137,6 +234,7 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
       name: trimmed,
       plays: 0,
       favorite: false,
+      checkout: false,
     });
 
     if (error) {
@@ -155,8 +253,13 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
     fetchItems();
   }
 
-  async function increment(item: ListItem) {
-    await supabase.from("list_items").update({ plays: item.plays + 1 }).eq("id", item.id);
+  async function toggleCheckout(item: ListItem) {
+    const { error } = await supabase.from("list_items").update({ checkout: !item.checkout }).eq("id", item.id);
+    if (error) {
+      notify("Could not update checkout");
+      return;
+    }
+    notify(item.checkout ? "Removed from checkout" : "Added to checkout");
     fetchItems();
   }
 
@@ -166,19 +269,142 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
     fetchItems();
   }
 
+  function isRandomMovie(item: ListItem) {
+    return item.name.trim().toLowerCase() === "random movie night";
+  }
+
+  function isNearbyTrail(item: ListItem) {
+    return item.name.trim().toLowerCase() === "nearby trail or park";
+  }
+
+  function isCraftSpot(item: ListItem) {
+    return item.name.trim().toLowerCase() === "find a nearby craft spot";
+  }
+
+  function isRandomRestaurant(item: ListItem) {
+    return item.name.trim().toLowerCase() === "random restaurant nearby";
+  }
+
+  function getSpecialAction(item: ListItem) {
+    if (isRandomMovie(item)) return "Movie";
+    if (isNearbyTrail(item)) return "Nearby";
+    if (isCraftSpot(item)) return "Craft";
+    if (isRandomRestaurant(item)) return "Food";
+    return null;
+  }
+
+  function recommendMovie(item: ListItem) {
+    const options = movieRecommendations[movieGenre] ?? movieRecommendations.comedy;
+    const movie = options[Math.floor(Math.random() * options.length)];
+    setRecommendation({
+      itemId: item.id,
+      title: movie,
+      description: `${movieGenre[0].toUpperCase()}${movieGenre.slice(1)} pick for an at-home movie date.`,
+    });
+  }
+
+  function getCurrentPosition() {
+    return new Promise<Coordinates>((resolve, reject) => {
+      if (!navigator.geolocation) {
+        reject(new Error("Location is not available in this browser."));
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        (position) =>
+          resolve({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          }),
+        () => reject(new Error("Could not get your location.")),
+        { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
+      );
+    });
+  }
+
+  function mapsSearchUrl(query: string, coordinates: Coordinates) {
+    const encodedQuery = encodeURIComponent(query);
+    return `https://www.google.com/maps/search/${encodedQuery}/@${coordinates.latitude},${coordinates.longitude},13z`;
+  }
+
+  function mapsSearchUrlForZip(query: string, zip: string) {
+    return `https://www.google.com/maps/search/${encodeURIComponent(`${query} near ${zip}`)}`;
+  }
+
+  function nearbyQueryForItem(item: ListItem) {
+    if (isNearbyTrail(item)) return "trail or park";
+    if (isCraftSpot(item)) return "craft studio pottery painting candle making paint and sip";
+    return `${pricePoint} restaurants`;
+  }
+
+  function nearbyRecommendationForItem(item: ListItem, href: string): Recommendation {
+    if (isNearbyTrail(item)) {
+      return {
+        itemId: item.id,
+        title: "Nearby trail or park",
+        description: "Open a map search near you and pick the spot with the prettiest walk.",
+        href,
+        actionLabel: "Open nearby parks",
+      };
+    }
+
+    if (isCraftSpot(item)) {
+      return {
+        itemId: item.id,
+        title: "Nearby craft spot",
+        description: "Look for pottery painting, candle bars, craft studios, or paint-and-sip places close by.",
+        href,
+        actionLabel: "Open craft spots",
+      };
+    }
+
+    return {
+      itemId: item.id,
+      title: `${pricePoint} restaurant nearby`,
+      description: "Open nearby restaurant ideas at your selected price point and choose the one that feels date-worthy.",
+      href,
+      actionLabel: "Open restaurants",
+    };
+  }
+
+  async function recommendNearby(item: ListItem) {
+    setLocatingItemId(item.id);
+    try {
+      const coordinates = await getCurrentPosition();
+      setManualLocationItemId(null);
+      setRecommendation(nearbyRecommendationForItem(item, mapsSearchUrl(nearbyQueryForItem(item), coordinates)));
+    } catch (error) {
+      setManualLocationItemId(item.id);
+      notify(error instanceof Error ? "Enter a ZIP code instead" : "Enter a ZIP code instead");
+    } finally {
+      setLocatingItemId(null);
+    }
+  }
+
+  function recommendNearbyFromZip(item: ListItem) {
+    const trimmedZip = zipCode.trim();
+    if (!trimmedZip) {
+      notify("Enter a ZIP code");
+      return;
+    }
+
+    setRecommendation(nearbyRecommendationForItem(item, mapsSearchUrlForZip(nearbyQueryForItem(item), trimmedZip)));
+    setManualLocationItemId(null);
+  }
+
   const selectedSection = sections.find((section) => section.id === selectedSectionId) ?? null;
 
   if (favoritesOnly) {
     const favoriteItems = items.filter((item) => item.favorite);
 
     return (
-      <section className="px-4 pb-28 pt-5 text-white">
+      <section className="px-4 pb-28 pt-5 text-[#493343]">
         <Toast message={toast} />
 
         <div className="pb-5">
-          <p className="text-xs font-medium uppercase tracking-[0.28em] text-teal-200/70">Favorites</p>
-          <h2 className="mt-1 text-3xl font-semibold tracking-tight">Favorite activities</h2>
-          <p className="mt-2 max-w-md text-sm leading-6 text-zinc-500">Everything you heart from the date categories lives here.</p>
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#e06f92]">Favorites</p>
+          <h2 className="mt-1 text-3xl font-semibold tracking-tight text-[#3f2a39]">Favorite activities</h2>
+          <p className="mt-2 max-w-md text-sm leading-6 text-[#8b687e]">Everything you heart from the date categories lives here.</p>
         </div>
 
         <div className="space-y-3">
@@ -187,7 +413,7 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
               const section = getSectionForItem(item);
 
               return (
-                <article key={item.id} className={`rounded-lg border border-white/10 p-4 ${section.bg}`}>
+                <article key={item.id} className={`rounded-lg border border-white/70 p-4 shadow-lg shadow-[#e06f92]/10 ${section.bg}`}>
                   <div className="flex items-center gap-3">
                     <button onClick={() => toggleFavorite(item)} className={`rounded-lg p-2 transition hover:bg-white/10 ${section.accent}`}>
                       <Heart size={19} fill="currentColor" />
@@ -196,13 +422,18 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
                       <p className={`text-[0.62rem] font-medium uppercase tracking-[0.2em] opacity-60 ${section.accent}`}>{section.title}</p>
                       <h3 className={`truncate text-sm font-medium ${section.text}`}>{item.name}</h3>
                     </div>
-                    {item.plays > 0 && <span className="rounded bg-white/[0.055] px-2 py-1 text-xs text-white/50">picked {item.plays}</span>}
+                    {item.checkout && (
+                      <span className={`inline-flex items-center gap-1 rounded bg-white/60 px-2 py-1 text-xs font-semibold ${section.accent}`}>
+                        <ShoppingBag size={13} />
+                        checkout
+                      </span>
+                    )}
                   </div>
                 </article>
               );
             })
           ) : (
-            <div className="rounded-lg border border-dashed border-white/10 bg-white/[0.025] p-8 text-center text-sm text-zinc-500">
+            <div className="rounded-lg border border-dashed border-[#f3bfd0] bg-white/55 p-8 text-center text-sm text-[#8b687e]">
               No favorite activities yet. Tap a heart next to a date idea to save it here.
             </div>
           )}
@@ -216,60 +447,158 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
     const emptyText = "Add the first activity.";
 
     return (
-      <section className="px-4 pb-28 pt-5 text-white">
+      <section className="px-4 pb-28 pt-5 text-[#493343]">
         <Toast message={toast} />
         <button
           onClick={() => setSelectedSectionId(null)}
-          className={`mb-5 rounded-md px-2 py-2 text-sm transition hover:bg-white/[0.045] ${selectedSection.accent}`}
+          className={`mb-5 rounded-md px-2 py-2 text-sm font-semibold transition hover:bg-white/60 ${selectedSection.accent}`}
         >
           Back to categories
         </button>
 
-        <article className={`relative overflow-hidden rounded-lg border border-white/10 p-6 ${selectedSection.bg} ${selectedSection.glow} before:pointer-events-none before:absolute before:inset-0`}>
+        <article className={`relative overflow-hidden rounded-lg border ${selectedSection.border} p-6 shadow-2xl shadow-[#e06f92]/10 ${selectedSection.bg} ${selectedSection.glow} before:pointer-events-none before:absolute before:inset-0`}>
           <div className="relative z-10">
             <p className={`text-[0.62rem] font-medium uppercase tracking-[0.24em] opacity-60 ${selectedSection.accent}`}>{selectedSection.eyebrow}</p>
             <h2 className={`mt-2 font-serif text-4xl font-light leading-none tracking-tight ${selectedSection.text}`}>{selectedSection.title}</h2>
-            <p className="mt-3 max-w-md text-sm leading-6 text-white/45">{selectedSection.description}</p>
+            <p className="mt-3 max-w-md text-sm leading-6 text-[#7d6175]">{selectedSection.description}</p>
 
             <div className="mt-8 flex flex-col gap-2">
               {sectionItems.length ? (
-                sectionItems.map((item) => (
-                  <div
-                    key={item.id}
-                    className={`group flex min-h-12 cursor-pointer items-center gap-3 rounded-md px-3 py-3 transition ${
-                      item.favorite ? "bg-white/10" : "bg-black/10 hover:bg-white/[0.045]"
-                    }`}
-                  >
-                    <button
-                      onClick={() => toggleFavorite(item)}
-                      className={`rounded-lg p-1.5 transition hover:bg-white/10 ${selectedSection.accent}`}
-                      aria-label={item.favorite ? `Unfavorite ${item.name}` : `Favorite ${item.name}`}
+                sectionItems.map((item) => {
+                  const specialAction = getSpecialAction(item);
+                  const itemRecommendation = recommendation?.itemId === item.id ? recommendation : null;
+
+                  return (
+                    <div
+                      key={item.id}
+                      className={`group rounded-md px-3 py-3 transition ${
+                        item.favorite ? "bg-white/65" : "bg-white/35 hover:bg-white/60"
+                      }`}
                     >
-                      <Heart size={18} fill={item.favorite ? "currentColor" : "none"} />
-                    </button>
-                    <span className={`min-w-0 flex-1 text-sm font-light leading-5 ${selectedSection.text}`}>{item.name}</span>
-                    <button
-                      onClick={(event) => {
-                        event.stopPropagation();
-                        increment(item);
-                      }}
-                      className={`rounded px-2 py-1 text-[0.65rem] ${selectedSection.accent} bg-white/[0.055]`}
-                    >
-                      {item.plays > 0 ? `picked ${item.plays}` : "pick"}
-                    </button>
-                    <button
-                      onClick={(event) => {
-                        event.stopPropagation();
-                        deleteItem(item);
-                      }}
-                      className="rounded p-1.5 text-white/20 transition hover:bg-white/10 hover:text-white/70"
-                    >
-                      <Trash2 size={14} />
-                    </button>
-                  </div>
-                ))
+                      <div className="flex min-h-12 cursor-pointer items-center gap-3">
+                        <button
+                          onClick={() => toggleFavorite(item)}
+                          className={`rounded-lg p-1.5 transition hover:bg-white/10 ${selectedSection.accent}`}
+                          aria-label={item.favorite ? `Unfavorite ${item.name}` : `Favorite ${item.name}`}
+                        >
+                          <Heart size={18} fill={item.favorite ? "currentColor" : "none"} />
+                        </button>
+                        <span className={`min-w-0 flex-1 text-sm font-light leading-5 ${selectedSection.text}`}>{item.name}</span>
+                        {specialAction && (
+                          <button
+                            onClick={(event) => {
+                              event.stopPropagation();
+                              if (isRandomMovie(item)) recommendMovie(item);
+                              else recommendNearby(item);
+                            }}
+                            className={`inline-flex items-center gap-1 rounded bg-white/75 px-2 py-1 text-[0.65rem] font-semibold ${selectedSection.accent}`}
+                          >
+                            {isRandomMovie(item) ? <Sparkles size={13} /> : <MapPin size={13} />}
+                            {locatingItemId === item.id ? "finding" : specialAction}
+                          </button>
+                        )}
+                        <button
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            toggleCheckout(item);
+                          }}
+                          className={`inline-flex items-center gap-1 rounded bg-white/60 px-2 py-1 text-[0.65rem] font-semibold ${selectedSection.accent}`}
+                        >
+                          <ShoppingBag size={13} />
+                          {item.checkout ? "in checkout" : "add"}
+                        </button>
+                        <button
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            deleteItem(item);
+                          }}
+                          className="rounded p-1.5 text-[#9a7187] transition hover:bg-white/60 hover:text-[#c7466f]"
+                        >
+                          <Trash2 size={14} />
+                        </button>
+                      </div>
+
+                      {isRandomMovie(item) && (
+                        <div className="mt-2 flex flex-wrap items-center gap-2 pl-10">
+                          <select
+                            value={movieGenre}
+                            onChange={(event) => setMovieGenre(event.target.value)}
+                            className="rounded-md border border-white/70 bg-white/75 px-2 py-1.5 text-xs font-medium text-[#493343] outline-none"
+                          >
+                            {Object.keys(movieRecommendations).map((genre) => (
+                              <option key={genre} value={genre}>
+                                {genre[0].toUpperCase()}
+                                {genre.slice(1)}
+                              </option>
+                            ))}
+                          </select>
+                          <span className="text-xs text-[#8b687e]">Pick a genre, then tap Movie.</span>
+                        </div>
+                      )}
+
+                      {isRandomRestaurant(item) && (
+                        <div className="mt-2 flex flex-wrap items-center gap-2 pl-10">
+                          {["$", "$$", "$$$"].map((price) => (
+                            <button
+                              key={price}
+                              onClick={() => setPricePoint(price)}
+                              className={`rounded-md border px-2 py-1 text-xs font-semibold transition ${
+                                pricePoint === price
+                                  ? "border-[#ffd67d] bg-[#ffe36e] text-[#6e4d09]"
+                                  : "border-white/70 bg-white/55 text-[#8b687e]"
+                              }`}
+                            >
+                              {price}
+                            </button>
+                          ))}
+                          <span className="text-xs text-[#8b687e]">Choose a price point, then tap Food.</span>
+                        </div>
+                      )}
+
+                      {manualLocationItemId === item.id && (
+                        <div className="mt-2 flex flex-wrap items-center gap-2 pl-10">
+                          <input
+                            inputMode="numeric"
+                            value={zipCode}
+                            onChange={(event) => setZipCode(event.target.value)}
+                            onKeyDown={(event) => {
+                              if (event.key === "Enter") recommendNearbyFromZip(item);
+                            }}
+                            placeholder="ZIP code"
+                            className="w-28 rounded-md border border-white/70 bg-white/75 px-2 py-1.5 text-xs font-medium text-[#493343] outline-none placeholder:text-[#b48ca0]"
+                          />
+                          <button
+                            onClick={() => recommendNearbyFromZip(item)}
+                            className={`rounded-md bg-white/75 px-2 py-1.5 text-xs font-semibold ${selectedSection.accent}`}
+                          >
+                            Search
+                          </button>
+                          <span className="text-xs text-[#8b687e]">Location did not work, so use ZIP instead.</span>
+                        </div>
+                      )}
+
+                      {itemRecommendation && (
+                        <div className="mt-3 rounded-lg border border-white/70 bg-white/70 p-3 pl-4 shadow-sm">
+                          <p className={`text-sm font-semibold ${selectedSection.text}`}>{itemRecommendation.title}</p>
+                          <p className="mt-1 text-xs leading-5 text-[#8b687e]">{itemRecommendation.description}</p>
+                          {hasRecommendationLink(itemRecommendation) && (
+                            <a
+                              href={itemRecommendation.href}
+                              target="_blank"
+                              rel="noreferrer"
+                              className={`mt-2 inline-flex items-center gap-1 text-xs font-semibold ${selectedSection.accent}`}
+                            >
+                              {itemRecommendation.actionLabel}
+                              <ExternalLink size={12} />
+                            </a>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })
               ) : (
-                <div className="rounded-md border border-dashed border-white/10 px-3 py-6 text-sm text-white/25">{emptyText}</div>
+                <div className="rounded-md border border-dashed border-white/70 px-3 py-6 text-sm text-[#9a7187]">{emptyText}</div>
               )}
             </div>
 
@@ -286,16 +615,16 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
                         if (event.key === "Escape") setAddingSection(null);
                       }}
                       placeholder="New activity..."
-                      className="min-w-0 flex-1 rounded-md border border-white/10 bg-black/20 px-3 py-2 text-sm text-white outline-none placeholder:text-white/25"
+                      className="min-w-0 flex-1 rounded-md border border-white/70 bg-white/70 px-3 py-2 text-sm text-[#493343] outline-none placeholder:text-[#b48ca0]"
                     />
-                    <button onClick={() => addItem(selectedSection)} className={`rounded-md border px-3 py-2 text-sm ${selectedSection.border} ${selectedSection.accent} bg-white/[0.045]`}>
+                    <button onClick={() => addItem(selectedSection)} className={`rounded-md border px-3 py-2 text-sm font-semibold ${selectedSection.border} ${selectedSection.accent} bg-white/65`}>
                       Add
                     </button>
                   </div>
                 ) : (
                   <button
                     onClick={() => setAddingSection(selectedSection.id)}
-                    className={`inline-flex items-center gap-2 rounded-md px-2 py-2 text-xs tracking-wide transition hover:bg-white/[0.045] ${selectedSection.accent} opacity-75 hover:opacity-100`}
+                    className={`inline-flex items-center gap-2 rounded-md px-2 py-2 text-xs font-semibold tracking-wide transition hover:bg-white/60 ${selectedSection.accent} opacity-75 hover:opacity-100`}
                   >
                     <Plus size={14} />
                     Add activity
@@ -310,15 +639,15 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
   }
 
   return (
-    <section className="px-4 pb-28 pt-5 text-white">
+    <section className="px-4 pb-28 pt-5 text-[#493343]">
       <Toast message={toast} />
 
       <div className="pb-5">
-        <p className="text-xs font-medium uppercase tracking-[0.28em] text-teal-200/70">
+        <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#e06f92]">
           {favoritesOnly ? "Saved dates" : "Date ideas"}
         </p>
-        <h2 className="mt-1 text-3xl font-semibold tracking-tight">{favoritesOnly ? "Favorites" : "Dates"}</h2>
-        <p className="mt-2 max-w-md text-sm leading-6 text-zinc-500">Choose a category, then pick or add activities inside it.</p>
+        <h2 className="mt-1 text-3xl font-semibold tracking-tight text-[#3f2a39]">{favoritesOnly ? "Favorites" : "Dates"}</h2>
+        <p className="mt-2 max-w-md text-sm leading-6 text-[#8b687e]">Choose a category, then pick or add activities inside it.</p>
       </div>
 
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
@@ -330,16 +659,16 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
             <button
               key={section.id}
               onClick={() => setSelectedSectionId(section.id)}
-              className={`relative overflow-hidden rounded-lg border border-white/10 p-6 text-left shadow-2xl shadow-black/20 transition hover:-translate-y-0.5 hover:border-white/20 ${section.bg} ${section.glow} before:pointer-events-none before:absolute before:inset-0 before:opacity-100`}
+              className={`relative overflow-hidden rounded-lg border ${section.border} p-6 text-left shadow-2xl shadow-[#e06f92]/10 transition hover:-translate-y-0.5 hover:shadow-[#e06f92]/20 ${section.bg} ${section.glow} before:pointer-events-none before:absolute before:inset-0 before:opacity-100`}
             >
               <div className={`pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-current to-transparent ${section.accent} opacity-60`} />
               <div className="relative z-10">
                 <p className={`text-[0.62rem] font-medium uppercase tracking-[0.24em] opacity-60 ${section.accent}`}>{section.eyebrow}</p>
                 <h3 className={`mt-2 font-serif text-4xl font-light leading-none tracking-tight ${section.text}`}>{section.title}</h3>
-                <p className="mt-4 text-sm leading-6 text-white/45">{section.description}</p>
+                <p className="mt-4 text-sm leading-6 text-[#7d6175]">{section.description}</p>
                 <div className="mt-7 flex items-center justify-between">
-                  <span className={`rounded px-2 py-1 text-[0.68rem] ${section.accent} bg-white/[0.055]`}>{countLabel}</span>
-                  <span className={`text-xs ${section.accent}`}>Open</span>
+                  <span className={`rounded px-2 py-1 text-[0.68rem] font-semibold ${section.accent} bg-white/60`}>{countLabel}</span>
+                  <span className={`text-xs font-semibold ${section.accent}`}>Open</span>
                 </div>
               </div>
             </button>

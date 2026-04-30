@@ -20,6 +20,7 @@ export interface ListItem {
   name: string;
   plays: number;
   favorite: boolean;
+  checkout: boolean;
   created_at: string;
 }
 
@@ -28,5 +29,16 @@ export interface CoupleMember {
   couple_id: string;
   user_id: string;
   role: "owner" | "member";
+  created_at: string;
+}
+
+export interface ScheduledDate {
+  id: string;
+  couple_id: string;
+  list_item_id: string | null;
+  title: string;
+  scheduled_for: string;
+  notes: string | null;
+  created_by: string | null;
   created_at: string;
 }
