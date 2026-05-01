@@ -1,9 +1,10 @@
 "use client";
 
-import { Copy, Inbox, Send, UserRoundCheck, UserRoundPlus } from "lucide-react";
+import { Copy, Inbox, LogOut, Send, UserRoundCheck, UserRoundPlus } from "lucide-react";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { normalizeUsername } from "@/lib/profiles";
+import { leaveCouple } from "@/lib/couples";
 
 type Props = {
   coupleId: string;
@@ -198,6 +199,13 @@ export default function PartnerStatus({ coupleId }: Props) {
     setInbox((current) => current.filter((entry) => entry.id !== invite.id));
   }
 
+  async function disconnect() {
+    const confirmed = window.confirm("Leave this couple? You can join again with a new invite.");
+    if (!confirmed) return;
+    await leaveCouple();
+    window.location.reload();
+  }
+
   return (
     <div className="rounded-lg border border-[#f3bfd0] bg-white/75 px-4 py-3 text-sm text-[#6f4d63] shadow-xl shadow-[#e06f92]/10 backdrop-blur">
       <div className="flex items-center gap-3">
@@ -208,16 +216,26 @@ export default function PartnerStatus({ coupleId }: Props) {
           <p className="font-semibold text-[#3f2a39]">{partner ? `Planning with ${partner}` : "Solo date board"}</p>
           <p className="truncate text-xs text-[#9a7187]">{partner ? "Shared ideas stay synced." : "Invite someone when a date deserves two calendars."}</p>
         </div>
-        <button
-          onClick={() => setInviteOpen((open) => !open)}
-          className="inline-flex h-9 items-center gap-2 rounded-lg border border-[#ffd67d] bg-[#fff3bf] px-3 text-xs font-semibold text-[#6e4d09] transition hover:bg-[#ffe36e]"
-        >
-          <Send size={14} />
-          Invite
-        </button>
+        {partner ? (
+          <button
+            onClick={disconnect}
+            className="inline-flex h-9 items-center gap-2 rounded-lg border border-[#f3bfd0] bg-white/70 px-3 text-xs font-semibold text-[#8b687e] transition hover:border-[#e06f92] hover:bg-[#fff0f5] hover:text-[#c7466f]"
+          >
+            <LogOut size={14} />
+            Leave
+          </button>
+        ) : (
+          <button
+            onClick={() => setInviteOpen((open) => !open)}
+            className="inline-flex h-9 items-center gap-2 rounded-lg border border-[#ffd67d] bg-[#fff3bf] px-3 text-xs font-semibold text-[#6e4d09] transition hover:bg-[#ffe36e]"
+          >
+            <Send size={14} />
+            Invite
+          </button>
+        )}
       </div>
 
-      {inviteOpen && (
+      {!partner && inviteOpen && (
         <div className="mt-4 space-y-4 border-t border-[#f3bfd0] pt-4">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#e06f92]">Invite by username</p>

@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, Heart, MapPin, Plus, ShoppingBag, Sparkles, Trash2 } from "lucide-react";
+import { Heart, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import type { ListItem, ListType } from "@/types";
@@ -22,15 +22,6 @@ type DateSection = {
   accent: string;
   text: string;
   legacyTypes: ListType[];
-};
-
-type Recommendation =
-  | { itemId: string; title: string; description: string }
-  | { itemId: string; title: string; description: string; href: string; actionLabel: string };
-
-type Coordinates = {
-  latitude: number;
-  longitude: number;
 };
 
 const defaultDateIdeas: Record<DateSection["id"], string[]> = {
@@ -62,14 +53,6 @@ const defaultDateIdeas: Record<DateSection["id"], string[]> = {
     "Picnic with takeout",
     "Coffee shop crawl",
   ],
-};
-
-const movieRecommendations: Record<string, string[]> = {
-  comedy: ["Palm Springs", "Crazy Rich Asians", "Game Night", "The Proposal"],
-  romance: ["About Time", "Set It Up", "The Big Sick", "Pride & Prejudice"],
-  thriller: ["Knives Out", "The Prestige", "Searching", "A Simple Favor"],
-  animated: ["Spider-Man: Into the Spider-Verse", "Howl's Moving Castle", "Ratatouille", "The Mitchells vs. the Machines"],
-  cozy: ["Julie & Julia", "The Holiday", "Little Women", "Paddington 2"],
 };
 
 const DEFAULT_SEED_KEY_PREFIX = "our-date-planner-default-ideas-seeded";
@@ -133,22 +116,12 @@ function getSectionForItem(item: ListItem) {
   return sections.find((section) => itemBelongsToSection(item, section)) ?? sections[0];
 }
 
-function hasRecommendationLink(recommendation: Recommendation): recommendation is Recommendation & { href: string; actionLabel: string } {
-  return "href" in recommendation;
-}
-
 export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
   const [items, setItems] = useState<ListItem[]>([]);
   const [selectedSectionId, setSelectedSectionId] = useState<DateSection["id"] | null>(null);
   const [drafts, setDrafts] = useState<Record<string, string>>({});
   const [addingSection, setAddingSection] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
-  const [movieGenre, setMovieGenre] = useState("comedy");
-  const [pricePoint, setPricePoint] = useState("$$");
-  const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
-  const [locatingItemId, setLocatingItemId] = useState<string | null>(null);
-  const [manualLocationItemId, setManualLocationItemId] = useState<string | null>(null);
-  const [zipCode, setZipCode] = useState("");
   const seededRef = useRef(false);
 
   useEffect(() => {
@@ -269,129 +242,6 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
     fetchItems();
   }
 
-  function isRandomMovie(item: ListItem) {
-    return item.name.trim().toLowerCase() === "random movie night";
-  }
-
-  function isNearbyTrail(item: ListItem) {
-    return item.name.trim().toLowerCase() === "nearby trail or park";
-  }
-
-  function isCraftSpot(item: ListItem) {
-    return item.name.trim().toLowerCase() === "find a nearby craft spot";
-  }
-
-  function isRandomRestaurant(item: ListItem) {
-    return item.name.trim().toLowerCase() === "random restaurant nearby";
-  }
-
-  function getSpecialAction(item: ListItem) {
-    if (isRandomMovie(item)) return "Movie";
-    if (isNearbyTrail(item)) return "Nearby";
-    if (isCraftSpot(item)) return "Craft";
-    if (isRandomRestaurant(item)) return "Food";
-    return null;
-  }
-
-  function recommendMovie(item: ListItem) {
-    const options = movieRecommendations[movieGenre] ?? movieRecommendations.comedy;
-    const movie = options[Math.floor(Math.random() * options.length)];
-    setRecommendation({
-      itemId: item.id,
-      title: movie,
-      description: `${movieGenre[0].toUpperCase()}${movieGenre.slice(1)} pick for an at-home movie date.`,
-    });
-  }
-
-  function getCurrentPosition() {
-    return new Promise<Coordinates>((resolve, reject) => {
-      if (!navigator.geolocation) {
-        reject(new Error("Location is not available in this browser."));
-        return;
-      }
-
-      navigator.geolocation.getCurrentPosition(
-        (position) =>
-          resolve({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-          }),
-        () => reject(new Error("Could not get your location.")),
-        { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
-      );
-    });
-  }
-
-  function mapsSearchUrl(query: string, coordinates: Coordinates) {
-    const encodedQuery = encodeURIComponent(query);
-    return `https://www.google.com/maps/search/${encodedQuery}/@${coordinates.latitude},${coordinates.longitude},13z`;
-  }
-
-  function mapsSearchUrlForZip(query: string, zip: string) {
-    return `https://www.google.com/maps/search/${encodeURIComponent(`${query} near ${zip}`)}`;
-  }
-
-  function nearbyQueryForItem(item: ListItem) {
-    if (isNearbyTrail(item)) return "trail or park";
-    if (isCraftSpot(item)) return "craft studio pottery painting candle making paint and sip";
-    return `${pricePoint} restaurants`;
-  }
-
-  function nearbyRecommendationForItem(item: ListItem, href: string): Recommendation {
-    if (isNearbyTrail(item)) {
-      return {
-        itemId: item.id,
-        title: "Nearby trail or park",
-        description: "Open a map search near you and pick the spot with the prettiest walk.",
-        href,
-        actionLabel: "Open nearby parks",
-      };
-    }
-
-    if (isCraftSpot(item)) {
-      return {
-        itemId: item.id,
-        title: "Nearby craft spot",
-        description: "Look for pottery painting, candle bars, craft studios, or paint-and-sip places close by.",
-        href,
-        actionLabel: "Open craft spots",
-      };
-    }
-
-    return {
-      itemId: item.id,
-      title: `${pricePoint} restaurant nearby`,
-      description: "Open nearby restaurant ideas at your selected price point and choose the one that feels date-worthy.",
-      href,
-      actionLabel: "Open restaurants",
-    };
-  }
-
-  async function recommendNearby(item: ListItem) {
-    setLocatingItemId(item.id);
-    try {
-      const coordinates = await getCurrentPosition();
-      setManualLocationItemId(null);
-      setRecommendation(nearbyRecommendationForItem(item, mapsSearchUrl(nearbyQueryForItem(item), coordinates)));
-    } catch (error) {
-      setManualLocationItemId(item.id);
-      notify(error instanceof Error ? "Enter a ZIP code instead" : "Enter a ZIP code instead");
-    } finally {
-      setLocatingItemId(null);
-    }
-  }
-
-  function recommendNearbyFromZip(item: ListItem) {
-    const trimmedZip = zipCode.trim();
-    if (!trimmedZip) {
-      notify("Enter a ZIP code");
-      return;
-    }
-
-    setRecommendation(nearbyRecommendationForItem(item, mapsSearchUrlForZip(nearbyQueryForItem(item), trimmedZip)));
-    setManualLocationItemId(null);
-  }
-
   const selectedSection = sections.find((section) => section.id === selectedSectionId) ?? null;
 
   if (favoritesOnly) {
@@ -465,9 +315,6 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
             <div className="mt-8 flex flex-col gap-2">
               {sectionItems.length ? (
                 sectionItems.map((item) => {
-                  const specialAction = getSpecialAction(item);
-                  const itemRecommendation = recommendation?.itemId === item.id ? recommendation : null;
-
                   return (
                     <div
                       key={item.id}
@@ -484,19 +331,6 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
                           <Heart size={18} fill={item.favorite ? "currentColor" : "none"} />
                         </button>
                         <span className={`min-w-0 flex-1 text-sm font-light leading-5 ${selectedSection.text}`}>{item.name}</span>
-                        {specialAction && (
-                          <button
-                            onClick={(event) => {
-                              event.stopPropagation();
-                              if (isRandomMovie(item)) recommendMovie(item);
-                              else recommendNearby(item);
-                            }}
-                            className={`inline-flex items-center gap-1 rounded bg-white/75 px-2 py-1 text-[0.65rem] font-semibold ${selectedSection.accent}`}
-                          >
-                            {isRandomMovie(item) ? <Sparkles size={13} /> : <MapPin size={13} />}
-                            {locatingItemId === item.id ? "finding" : specialAction}
-                          </button>
-                        )}
                         <button
                           onClick={(event) => {
                             event.stopPropagation();
@@ -517,83 +351,6 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
                           <Trash2 size={14} />
                         </button>
                       </div>
-
-                      {isRandomMovie(item) && (
-                        <div className="mt-2 flex flex-wrap items-center gap-2 pl-10">
-                          <select
-                            value={movieGenre}
-                            onChange={(event) => setMovieGenre(event.target.value)}
-                            className="rounded-md border border-white/70 bg-white/75 px-2 py-1.5 text-xs font-medium text-[#493343] outline-none"
-                          >
-                            {Object.keys(movieRecommendations).map((genre) => (
-                              <option key={genre} value={genre}>
-                                {genre[0].toUpperCase()}
-                                {genre.slice(1)}
-                              </option>
-                            ))}
-                          </select>
-                          <span className="text-xs text-[#8b687e]">Pick a genre, then tap Movie.</span>
-                        </div>
-                      )}
-
-                      {isRandomRestaurant(item) && (
-                        <div className="mt-2 flex flex-wrap items-center gap-2 pl-10">
-                          {["$", "$$", "$$$"].map((price) => (
-                            <button
-                              key={price}
-                              onClick={() => setPricePoint(price)}
-                              className={`rounded-md border px-2 py-1 text-xs font-semibold transition ${
-                                pricePoint === price
-                                  ? "border-[#ffd67d] bg-[#ffe36e] text-[#6e4d09]"
-                                  : "border-white/70 bg-white/55 text-[#8b687e]"
-                              }`}
-                            >
-                              {price}
-                            </button>
-                          ))}
-                          <span className="text-xs text-[#8b687e]">Choose a price point, then tap Food.</span>
-                        </div>
-                      )}
-
-                      {manualLocationItemId === item.id && (
-                        <div className="mt-2 flex flex-wrap items-center gap-2 pl-10">
-                          <input
-                            inputMode="numeric"
-                            value={zipCode}
-                            onChange={(event) => setZipCode(event.target.value)}
-                            onKeyDown={(event) => {
-                              if (event.key === "Enter") recommendNearbyFromZip(item);
-                            }}
-                            placeholder="ZIP code"
-                            className="w-28 rounded-md border border-white/70 bg-white/75 px-2 py-1.5 text-xs font-medium text-[#493343] outline-none placeholder:text-[#b48ca0]"
-                          />
-                          <button
-                            onClick={() => recommendNearbyFromZip(item)}
-                            className={`rounded-md bg-white/75 px-2 py-1.5 text-xs font-semibold ${selectedSection.accent}`}
-                          >
-                            Search
-                          </button>
-                          <span className="text-xs text-[#8b687e]">Location did not work, so use ZIP instead.</span>
-                        </div>
-                      )}
-
-                      {itemRecommendation && (
-                        <div className="mt-3 rounded-lg border border-white/70 bg-white/70 p-3 pl-4 shadow-sm">
-                          <p className={`text-sm font-semibold ${selectedSection.text}`}>{itemRecommendation.title}</p>
-                          <p className="mt-1 text-xs leading-5 text-[#8b687e]">{itemRecommendation.description}</p>
-                          {hasRecommendationLink(itemRecommendation) && (
-                            <a
-                              href={itemRecommendation.href}
-                              target="_blank"
-                              rel="noreferrer"
-                              className={`mt-2 inline-flex items-center gap-1 text-xs font-semibold ${selectedSection.accent}`}
-                            >
-                              {itemRecommendation.actionLabel}
-                              <ExternalLink size={12} />
-                            </a>
-                          )}
-                        </div>
-                      )}
                     </div>
                   );
                 })

@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import BottomNav from "@/components/BottomNav";
-import DisconnectButton from "@/components/DisconnectButton";
 import ListPanel from "@/components/ListPanel";
 import PartnerStatus from "@/components/PartnerStatus";
 import PickerPage from "@/components/PickerPage";
 import StatsPage from "@/components/StatsPage";
+import ThemeToggle from "@/components/ThemeToggle";
 import UsernameSetup from "@/components/UsernameSetup";
 import { createCouple, getUserCoupleId } from "@/lib/couples";
 import { getMyProfile } from "@/lib/profiles";
@@ -79,7 +79,7 @@ export default function DashboardPage() {
             <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#e06f92]">Our Date Planner</p>
             <h1 className="mt-1 text-2xl font-semibold tracking-tight text-[#3f2a39]">Date planner</h1>
           </div>
-          <DisconnectButton />
+          <ThemeToggle />
         </div>
         <div className="mt-4">
           <PartnerStatus coupleId={coupleId} />

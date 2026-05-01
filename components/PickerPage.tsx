@@ -1,7 +1,7 @@
 "use client";
 
 import confetti from "canvas-confetti";
-import { CalendarDays, Check, Heart, Shuffle, ShoppingBag, Trash2 } from "lucide-react";
+import { CalendarDays, Check, ExternalLink, Heart, MapPin, Plus, Shuffle, ShoppingBag, Sparkles, Trash2 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import Toast from "@/components/Toast";
 import { supabase } from "@/lib/supabase";
@@ -18,6 +18,18 @@ type ActivitySection = {
   bg: string;
   text: string;
   legacyTypes: ListType[];
+};
+
+type Coordinates = {
+  latitude: number;
+  longitude: number;
+};
+
+type PlaceChoice = {
+  id: string;
+  name: string;
+  detail: string;
+  href: string;
 };
 
 const sections: ActivitySection[] = [
@@ -55,6 +67,14 @@ const sections: ActivitySection[] = [
   },
 ];
 
+const movieRecommendations: Record<string, string[]> = {
+  comedy: ["Palm Springs", "Crazy Rich Asians", "Game Night", "The Proposal", "10 Things I Hate About You"],
+  romance: ["About Time", "Set It Up", "The Big Sick", "Pride & Prejudice", "Love, Rosie"],
+  thriller: ["Knives Out", "The Prestige", "Searching", "A Simple Favor", "Source Code"],
+  animated: ["Spider-Man: Into the Spider-Verse", "Howl's Moving Castle", "Ratatouille", "The Mitchells vs. the Machines", "Kiki's Delivery Service"],
+  cozy: ["Julie & Julia", "The Holiday", "Little Women", "Paddington 2", "You've Got Mail"],
+};
+
 function getSectionForItem(item: ListItem) {
   return sections.find((section) => item.type === section.id || section.legacyTypes.includes(item.type)) ?? sections[0];
 }
@@ -67,6 +87,51 @@ function formatDate(date: string) {
   });
 }
 
+function isRandomMovie(item: ListItem) {
+  return item.name.trim().toLowerCase() === "random movie night";
+}
+
+function isNearbyTrail(item: ListItem) {
+  return item.name.trim().toLowerCase() === "nearby trail or park";
+}
+
+function isCraftSpot(item: ListItem) {
+  return item.name.trim().toLowerCase() === "find a nearby craft spot";
+}
+
+function isRandomRestaurant(item: ListItem) {
+  return item.name.trim().toLowerCase() === "random restaurant nearby";
+}
+
+function isSuggestionStarter(item: ListItem) {
+  return isRandomMovie(item) || isNearbyTrail(item) || isCraftSpot(item) || isRandomRestaurant(item);
+}
+
+function shuffle<T>(values: T[]) {
+  return [...values].sort(() => Math.random() - 0.5);
+}
+
+function getCurrentPosition() {
+  return new Promise<Coordinates>((resolve, reject) => {
+    if (!navigator.geolocation) {
+      reject(new Error("Location is not available."));
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => resolve({ latitude: position.coords.latitude, longitude: position.coords.longitude }),
+      () => reject(new Error("Could not get location.")),
+      { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
+    );
+  });
+}
+
+function mapsHref(name: string, coordinates?: Coordinates) {
+  const query = encodeURIComponent(name);
+  if (!coordinates) return `https://www.google.com/maps/search/${query}`;
+  return `https://www.google.com/maps/search/${query}/@${coordinates.latitude},${coordinates.longitude},14z`;
+}
+
 export default function PickerPage({ coupleId }: Props) {
   const [items, setItems] = useState<ListItem[]>([]);
   const [scheduledDates, setScheduledDates] = useState<ScheduledDate[]>([]);
@@ -75,6 +140,14 @@ export default function PickerPage({ coupleId }: Props) {
   const [notes, setNotes] = useState("");
   const [toast, setToast] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [movieGenre, setMovieGenre] = useState("comedy");
+  const [pricePoint, setPricePoint] = useState("$$");
+  const [zipCode, setZipCode] = useState("");
+  const [manualLocationItemId, setManualLocationItemId] = useState<string | null>(null);
+  const [suggestionItemId, setSuggestionItemId] = useState<string | null>(null);
+  const [movieChoices, setMovieChoices] = useState<string[]>([]);
+  const [placeChoices, setPlaceChoices] = useState<PlaceChoice[]>([]);
+  const [suggestionsLoading, setSuggestionsLoading] = useState(false);
 
   useEffect(() => {
     loadItems();
@@ -223,6 +296,157 @@ export default function PickerPage({ coupleId }: Props) {
     loadScheduledDates();
   }
 
+  function clearSuggestions() {
+    setSuggestionItemId(null);
+    setMovieChoices([]);
+    setPlaceChoices([]);
+    setManualLocationItemId(null);
+  }
+
+  function showMovieChoices(item: ListItem) {
+    const choices = shuffle(movieRecommendations[movieGenre] ?? movieRecommendations.comedy).slice(0, 3);
+    setSuggestionItemId(item.id);
+    setMovieChoices(choices);
+    setPlaceChoices([]);
+    setManualLocationItemId(null);
+  }
+
+  function placeQueryForItem(item: ListItem) {
+    if (isNearbyTrail(item)) {
+      return `
+        node(around:12000,{{lat}},{{lon}})["leisure"~"park|nature_reserve|garden"];
+        way(around:12000,{{lat}},{{lon}})["leisure"~"park|nature_reserve|garden"];
+        relation(around:12000,{{lat}},{{lon}})["leisure"~"park|nature_reserve|garden"];
+      `;
+    }
+
+    if (isCraftSpot(item)) {
+      return `
+        node(around:16000,{{lat}},{{lon}})["shop"="craft"];
+        node(around:16000,{{lat}},{{lon}})["amenity"="arts_centre"];
+        node(around:16000,{{lat}},{{lon}})["craft"];
+      `;
+    }
+
+    return `
+      node(around:12000,{{lat}},{{lon}})["amenity"~"restaurant|cafe"];
+      way(around:12000,{{lat}},{{lon}})["amenity"~"restaurant|cafe"];
+    `;
+  }
+
+  function placeFallbackLabel(item: ListItem) {
+    if (isNearbyTrail(item)) return "trail or park";
+    if (isCraftSpot(item)) return "craft spot";
+    return `${pricePoint} restaurant`;
+  }
+
+  async function geocodeZip(zip: string): Promise<Coordinates> {
+    const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&postalcode=${encodeURIComponent(zip)}`);
+    const results = (await response.json()) as { lat: string; lon: string }[];
+    if (!results.length) throw new Error("Could not find that ZIP code.");
+    return { latitude: Number(results[0].lat), longitude: Number(results[0].lon) };
+  }
+
+  async function fetchPlaceChoices(item: ListItem, coordinates: Coordinates) {
+    const rawQuery = placeQueryForItem(item)
+      .replaceAll("{{lat}}", String(coordinates.latitude))
+      .replaceAll("{{lon}}", String(coordinates.longitude));
+    const query = `[out:json][timeout:16];(${rawQuery});out center tags 18;`;
+    const response = await fetch("https://overpass-api.de/api/interpreter", {
+      method: "POST",
+      body: query,
+    });
+    const result = (await response.json()) as {
+      elements?: {
+        id: number;
+        lat?: number;
+        lon?: number;
+        center?: { lat: number; lon: number };
+        tags?: { name?: string; cuisine?: string; amenity?: string; leisure?: string; shop?: string };
+      }[];
+    };
+
+    const choices = (result.elements ?? [])
+      .map((element) => {
+        const lat = element.lat ?? element.center?.lat;
+        const lon = element.lon ?? element.center?.lon;
+        const name = element.tags?.name?.trim();
+        if (!lat || !lon || !name) return null;
+        const detail = [element.tags?.cuisine, element.tags?.amenity, element.tags?.leisure, element.tags?.shop]
+          .filter(Boolean)
+          .join(" / ");
+        return {
+          id: String(element.id),
+          name,
+          detail: detail || placeFallbackLabel(item),
+          href: mapsHref(name, { latitude: lat, longitude: lon }),
+        };
+      })
+      .filter((choice): choice is PlaceChoice => Boolean(choice));
+
+    const uniqueChoices = Array.from(new Map(choices.map((choice) => [choice.name.toLowerCase(), choice])).values());
+    return shuffle(uniqueChoices).slice(0, 5);
+  }
+
+  async function showNearbyChoices(item: ListItem, zipOverride?: string) {
+    setSuggestionsLoading(true);
+    setSuggestionItemId(item.id);
+    setMovieChoices([]);
+    setPlaceChoices([]);
+
+    try {
+      const coordinates = zipOverride ? await geocodeZip(zipOverride) : await getCurrentPosition();
+      const choices = await fetchPlaceChoices(item, coordinates);
+      if (!choices.length) {
+        setPlaceChoices([
+          {
+            id: "maps-search",
+            name: `Search for a nearby ${placeFallbackLabel(item)}`,
+            detail: "No exact open-map matches came back. Open a broader map search.",
+            href: mapsHref(`${placeFallbackLabel(item)} near ${zipOverride ?? "me"}`, coordinates),
+          },
+        ]);
+      } else {
+        setPlaceChoices(choices);
+      }
+      setManualLocationItemId(null);
+    } catch {
+      if (zipOverride) notify("Could not find choices for that ZIP");
+      else {
+        setManualLocationItemId(item.id);
+        notify("Enter a ZIP code instead");
+      }
+    } finally {
+      setSuggestionsLoading(false);
+    }
+  }
+
+  async function addSuggestionToCheckout(sourceItem: ListItem, title: string, detail?: string) {
+    const { data, error } = await supabase
+      .from("list_items")
+      .insert({
+        couple_id: coupleId,
+        type: sourceItem.type,
+        name: detail ? `${title} - ${detail}` : title,
+        plays: 0,
+        favorite: false,
+        checkout: true,
+      })
+      .select("*")
+      .single();
+
+    if (error) {
+      notify("Could not add suggestion");
+      return;
+    }
+
+    await supabase.from("list_items").update({ checkout: false }).eq("id", sourceItem.id);
+    if (data?.id) setSelectedIds(new Set([data.id]));
+    clearSuggestions();
+    notify("Added suggestion to checkout");
+    loadItems();
+  }
+
   return (
     <section className="px-4 pb-32 pt-5 text-[#493343]">
       <Toast message={toast} />
@@ -272,6 +496,127 @@ export default function PickerPage({ coupleId }: Props) {
                     <Trash2 size={17} />
                   </button>
                 </div>
+
+                {isSuggestionStarter(item) && (
+                  <div className="mt-3 rounded-lg border border-white/70 bg-white/55 p-3">
+                    <p className={`text-xs font-bold uppercase tracking-[0.2em] ${section.accent}`}>Choose in app</p>
+
+                    {isRandomMovie(item) && (
+                      <div className="mt-3 flex flex-wrap items-center gap-2">
+                        <select
+                          value={movieGenre}
+                          onChange={(event) => setMovieGenre(event.target.value)}
+                          className="rounded-md border border-[#f3bfd0] bg-white px-2 py-2 text-xs font-medium text-[#493343] outline-none"
+                        >
+                          {Object.keys(movieRecommendations).map((genre) => (
+                            <option key={genre} value={genre}>
+                              {genre[0].toUpperCase()}
+                              {genre.slice(1)}
+                            </option>
+                          ))}
+                        </select>
+                        <button
+                          onClick={() => showMovieChoices(item)}
+                          className={`inline-flex items-center gap-1 rounded-md bg-white px-3 py-2 text-xs font-semibold ${section.accent}`}
+                        >
+                          <Sparkles size={14} />
+                          Show movies
+                        </button>
+                      </div>
+                    )}
+
+                    {isRandomRestaurant(item) && (
+                      <div className="mt-3 flex flex-wrap items-center gap-2">
+                        {["$", "$$", "$$$"].map((price) => (
+                          <button
+                            key={price}
+                            onClick={() => setPricePoint(price)}
+                            className={`rounded-md border px-3 py-2 text-xs font-semibold transition ${
+                              pricePoint === price
+                                ? "border-[#ffd67d] bg-[#ffe36e] text-[#6e4d09]"
+                                : "border-white/70 bg-white/75 text-[#8b687e]"
+                            }`}
+                          >
+                            {price}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+
+                    {!isRandomMovie(item) && (
+                      <div className="mt-3 flex flex-wrap items-center gap-2">
+                        <button
+                          onClick={() => showNearbyChoices(item)}
+                          disabled={suggestionsLoading && suggestionItemId === item.id}
+                          className={`inline-flex items-center gap-1 rounded-md bg-white px-3 py-2 text-xs font-semibold ${section.accent} disabled:opacity-50`}
+                        >
+                          <MapPin size={14} />
+                          {suggestionsLoading && suggestionItemId === item.id ? "Finding..." : "Use my location"}
+                        </button>
+                        <input
+                          inputMode="numeric"
+                          value={zipCode}
+                          onChange={(event) => setZipCode(event.target.value)}
+                          onKeyDown={(event) => {
+                            if (event.key === "Enter") showNearbyChoices(item, zipCode.trim());
+                          }}
+                          placeholder="ZIP code"
+                          className="w-28 rounded-md border border-[#f3bfd0] bg-white px-2 py-2 text-xs font-medium text-[#493343] outline-none placeholder:text-[#b48ca0]"
+                        />
+                        <button
+                          onClick={() => showNearbyChoices(item, zipCode.trim())}
+                          className={`rounded-md bg-white px-3 py-2 text-xs font-semibold ${section.accent}`}
+                        >
+                          Search
+                        </button>
+                      </div>
+                    )}
+
+                    {manualLocationItemId === item.id && (
+                      <p className="mt-2 text-xs text-[#8b687e]">Location did not work, so enter a ZIP code and tap Search.</p>
+                    )}
+
+                    {suggestionItemId === item.id && movieChoices.length > 0 && (
+                      <div className="mt-3 grid gap-2">
+                        {movieChoices.map((movie) => (
+                          <button
+                            key={movie}
+                            onClick={() => addSuggestionToCheckout(item, `Movie night: ${movie}`, `${movieGenre} movie`)}
+                            className="flex items-center justify-between gap-3 rounded-md border border-white/70 bg-white/75 px-3 py-2 text-left text-sm font-semibold text-[#493343]"
+                          >
+                            <span>{movie}</span>
+                            <Plus size={15} />
+                          </button>
+                        ))}
+                      </div>
+                    )}
+
+                    {suggestionItemId === item.id && placeChoices.length > 0 && (
+                      <div className="mt-3 grid gap-2">
+                        {placeChoices.map((place) => (
+                          <div key={place.id} className="rounded-md border border-white/70 bg-white/75 p-3">
+                            <div className="flex items-start justify-between gap-3">
+                              <div className="min-w-0">
+                                <p className="font-semibold text-[#493343]">{place.name}</p>
+                                <p className="mt-1 text-xs text-[#8b687e]">{place.detail}</p>
+                              </div>
+                              <a href={place.href} target="_blank" rel="noreferrer" className={`rounded-md p-1.5 ${section.accent}`} aria-label={`Open ${place.name} on map`}>
+                                <ExternalLink size={15} />
+                              </a>
+                            </div>
+                            <button
+                              onClick={() => addSuggestionToCheckout(item, place.name, place.detail)}
+                              className={`mt-3 inline-flex items-center gap-1 rounded-md bg-white px-3 py-2 text-xs font-semibold ${section.accent}`}
+                            >
+                              <Plus size={14} />
+                              Add this choice
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
               </article>
             );
           })
