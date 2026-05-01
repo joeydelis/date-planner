@@ -41,31 +41,31 @@ export default function StatsPage({ coupleId }: Props) {
   const favorites = items.filter((item) => item.favorite).length;
 
   return (
-    <section className="px-4 pb-28 pt-5 text-[#493343]">
+    <section className="px-4 pb-36 pt-6 text-[#edf3ff]">
       <div className="mb-6">
-        <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#e06f92]">Stats</p>
-        <h2 className="mt-1 text-3xl font-semibold tracking-tight text-[#3f2a39]">Your date history</h2>
+        <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#68e7ff]">Stats</p>
+        <h2 className="mt-1 text-3xl font-semibold tracking-tight text-white">Your date history</h2>
       </div>
 
       <div className="mb-5 grid grid-cols-2 gap-3">
-        <div className="rounded-lg border border-[#9ee7d0] bg-[#dffbf1] p-4 shadow-xl shadow-[#1c8f79]/10">
-          <p className="text-sm font-medium text-[#24866f]">Total picks</p>
+        <div className="app-card rounded-[1.5rem] p-4">
+          <p className="text-sm font-medium text-[#68e7ff]">Total picks</p>
           <p className="mt-2 text-3xl font-semibold">{totalPicks}</p>
         </div>
-        <div className="rounded-lg border border-[#f3bfd0] bg-[#ffe8f0] p-4 shadow-xl shadow-[#e06f92]/10">
-          <p className="text-sm font-medium text-[#d65b82]">Favorites</p>
+        <div className="app-card rounded-[1.5rem] p-4">
+          <p className="text-sm font-medium text-[#c7a0ff]">Favorites</p>
           <p className="mt-2 text-3xl font-semibold">{favorites}</p>
         </div>
       </div>
 
       <div className="space-y-3">
         {items.map((item, index) => (
-          <article key={item.id} className="flex items-center justify-between rounded-lg border border-[#f3bfd0] bg-white/75 p-4 shadow-xl shadow-[#e06f92]/10">
+          <article key={item.id} className="flex items-center justify-between rounded-[1.35rem] border border-white/10 bg-[#0f1422]/82 p-4 shadow-xl shadow-black/20">
             <div>
-              <p className="text-xs text-[#9a7187]">#{index + 1} / {item.type}</p>
-              <h3 className="font-semibold tracking-tight text-[#3f2a39]">{item.name}</h3>
+              <p className="text-xs text-[#8d98ad]">#{index + 1} / {item.type}</p>
+              <h3 className="font-semibold tracking-tight text-white">{item.name}</h3>
             </div>
-            <span className="rounded-lg border border-[#ffd67d] bg-[#fff3bf] px-3 py-1 text-sm font-semibold text-[#8a6514]">{item.plays}</span>
+            <span className="rounded-xl border border-[#68e7ff]/18 bg-[#68e7ff]/12 px-3 py-1 text-sm font-semibold text-[#68e7ff]">{item.plays}</span>
           </article>
         ))}
       </div>

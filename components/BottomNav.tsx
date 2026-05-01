@@ -17,14 +17,14 @@ const tabs = [
 
 export default function BottomNav({ active, setActive }: Props) {
   return (
-    <nav className="safe-bottom fixed bottom-0 left-0 right-0 z-50 border-t border-[#f3bfd0] bg-white/85 shadow-[0_-12px_35px_rgba(224,111,146,0.16)] backdrop-blur-xl">
-      <div className="mx-auto grid max-w-md grid-cols-4 px-2 py-2">
+    <nav className="safe-bottom fixed bottom-3 left-0 right-0 z-50 px-4">
+      <div className="mx-auto grid max-w-md grid-cols-4 rounded-[1.6rem] border border-[#84a2ff]/16 bg-[#0d1220]/90 p-2 shadow-[0_18px_60px_rgba(0,0,0,0.45)] backdrop-blur-2xl">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActive(tab.id)}
-            className={`flex flex-col items-center gap-1 rounded-lg py-2 text-[11px] font-medium transition ${
-              active === tab.id ? "bg-[#ffe36e] text-[#4b3440] shadow-sm" : "text-[#9a7187] hover:bg-[#fff0f5] hover:text-[#d65b82]"
+            className={`flex min-h-[3.6rem] flex-col items-center justify-center gap-1 rounded-[1.1rem] py-2 text-[11px] font-semibold transition ${
+              active === tab.id ? "bg-[#68e7ff]/14 text-[#68e7ff] shadow-[inset_0_0_0_1px_rgba(104,231,255,0.18)]" : "text-[#667087] hover:bg-white/[0.04] hover:text-[#edf3ff]"
             }`}
           >
             <tab.icon size={19} strokeWidth={2.2} />
