@@ -1,10 +1,10 @@
 "use client";
 
-import { ExternalLink, Heart, MapPin, Plus, ShoppingBag, Sparkles, Trash2 } from "lucide-react";
+import { Check, Heart, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import Toast from "@/components/Toast";
 import { supabase } from "@/lib/supabase";
 import type { ListItem, ListType } from "@/types";
-import Toast from "@/components/Toast";
 
 type Props = {
   coupleId: string;
@@ -15,61 +15,17 @@ type DateSection = {
   id: Extract<ListType, "home" | "fun" | "creative" | "food">;
   eyebrow: string;
   title: string;
-  description: string;
-  bg: string;
-  glow: string;
-  border: string;
+  gradient: string;
+  ring: string;
   accent: string;
-  text: string;
   legacyTypes: ListType[];
 };
 
-type Recommendation =
-  | { itemId: string; title: string; description: string }
-  | { itemId: string; title: string; description: string; href: string; actionLabel: string };
-
-type Coordinates = {
-  latitude: number;
-  longitude: number;
-};
-
 const defaultDateIdeas: Record<DateSection["id"], string[]> = {
-  home: [
-    "Random movie night",
-    "Cook a new recipe together",
-    "Board game night",
-    "Blanket fort dessert picnic",
-    "At-home spa night",
-  ],
-  fun: [
-    "Nearby trail or park",
-    "Thrift store treasure hunt",
-    "Mini golf",
-    "Arcade night",
-    "Farmers market stroll",
-  ],
-  creative: [
-    "Find a nearby craft spot",
-    "Pottery painting",
-    "Paint and sip night",
-    "Make custom candles",
-    "Take a dance class",
-  ],
-  food: [
-    "Random restaurant nearby",
-    "Dessert-only date",
-    "Try a new brunch spot",
-    "Picnic with takeout",
-    "Coffee shop crawl",
-  ],
-};
-
-const movieRecommendations: Record<string, string[]> = {
-  comedy: ["Palm Springs", "Crazy Rich Asians", "Game Night", "The Proposal"],
-  romance: ["About Time", "Set It Up", "The Big Sick", "Pride & Prejudice"],
-  thriller: ["Knives Out", "The Prestige", "Searching", "A Simple Favor"],
-  animated: ["Spider-Man: Into the Spider-Verse", "Howl's Moving Castle", "Ratatouille", "The Mitchells vs. the Machines"],
-  cozy: ["Julie & Julia", "The Holiday", "Little Women", "Paddington 2"],
+  home: ["Random movie night", "Cook a new recipe together", "Board game night", "Blanket fort dessert picnic", "At-home spa night"],
+  fun: ["Nearby trail or park", "Thrift store treasure hunt", "Mini golf", "Arcade night", "Farmers market stroll"],
+  creative: ["Find a nearby craft spot", "Pottery painting", "Paint and sip night", "Make custom candles", "Take a dance class"],
+  food: ["Random restaurant nearby", "Dessert-only date", "Try a new brunch spot", "Picnic with takeout", "Coffee shop crawl"],
 };
 
 const DEFAULT_SEED_KEY_PREFIX = "our-date-planner-default-ideas-seeded";
@@ -77,50 +33,38 @@ const DEFAULT_SEED_KEY_PREFIX = "our-date-planner-default-ideas-seeded";
 const sections: DateSection[] = [
   {
     id: "home",
-    eyebrow: "Stay at home",
+    eyebrow: "Cozy",
     title: "At home",
-    description: "Cozy nights, games, movies, and low-key plans without leaving the house.",
-    bg: "bg-[#fff2b8]",
-    glow: "before:bg-[radial-gradient(ellipse_at_85%_5%,rgba(255,143,171,0.34),transparent_58%)]",
-    border: "border-[#ffd67d]",
-    accent: "text-[#c98512]",
-    text: "text-[#4b3440]",
+    gradient: "from-[#13234f] via-[#1c1747] to-[#11131f]",
+    ring: "border-[#53b7ff]/35",
+    accent: "text-[#62d9ff]",
     legacyTypes: ["movies", "boardgames", "videogames"],
   },
   {
     id: "fun",
-    eyebrow: "Fun activity",
+    eyebrow: "Explore",
     title: "Get out",
-    description: "Active dates, local adventures, thrift runs, trails, and things around town.",
-    bg: "bg-[#dffbf1]",
-    glow: "before:bg-[radial-gradient(ellipse_at_15%_95%,rgba(255,227,110,0.48),transparent_58%)]",
-    border: "border-[#9ee7d0]",
-    accent: "text-[#1c8f79]",
-    text: "text-[#284c45]",
+    gradient: "from-[#083445] via-[#12305a] to-[#10131f]",
+    ring: "border-[#6af5d2]/35",
+    accent: "text-[#6af5d2]",
     legacyTypes: ["trails", "thriftstores"],
   },
   {
     id: "creative",
-    eyebrow: "Creative",
-    title: "Make something",
-    description: "Hands-on plans like painting, cooking projects, classes, and crafty experiments.",
-    bg: "bg-[#eee7ff]",
-    glow: "before:bg-[radial-gradient(ellipse_at_85%_95%,rgba(255,143,171,0.36),transparent_58%)]",
-    border: "border-[#c8b7ff]",
-    accent: "text-[#7f63c7]",
-    text: "text-[#433963]",
+    eyebrow: "Make",
+    title: "Create",
+    gradient: "from-[#35135e] via-[#23194d] to-[#11131f]",
+    ring: "border-[#b98cff]/35",
+    accent: "text-[#c7a0ff]",
     legacyTypes: ["custom"],
   },
   {
     id: "food",
-    eyebrow: "Food",
-    title: "Let's eat",
-    description: "Restaurants, treats, picnics, markets, and food ideas worth saving.",
-    bg: "bg-[#ffe2d4]",
-    glow: "before:bg-[radial-gradient(ellipse_at_15%_5%,rgba(255,211,92,0.44),transparent_58%)]",
-    border: "border-[#ffb392]",
-    accent: "text-[#d66a46]",
-    text: "text-[#5d382f]",
+    eyebrow: "Taste",
+    title: "Eat",
+    gradient: "from-[#4a1839] via-[#2a1a4f] to-[#11131f]",
+    ring: "border-[#ff6fb1]/35",
+    accent: "text-[#ff8fc5]",
     legacyTypes: ["restaurants"],
   },
 ];
@@ -133,22 +77,12 @@ function getSectionForItem(item: ListItem) {
   return sections.find((section) => itemBelongsToSection(item, section)) ?? sections[0];
 }
 
-function hasRecommendationLink(recommendation: Recommendation): recommendation is Recommendation & { href: string; actionLabel: string } {
-  return "href" in recommendation;
-}
-
 export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
   const [items, setItems] = useState<ListItem[]>([]);
-  const [selectedSectionId, setSelectedSectionId] = useState<DateSection["id"] | null>(null);
+  const [selectedSectionId, setSelectedSectionId] = useState<DateSection["id"]>("home");
   const [drafts, setDrafts] = useState<Record<string, string>>({});
-  const [addingSection, setAddingSection] = useState<string | null>(null);
+  const [adding, setAdding] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
-  const [movieGenre, setMovieGenre] = useState("comedy");
-  const [pricePoint, setPricePoint] = useState("$$");
-  const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
-  const [locatingItemId, setLocatingItemId] = useState<string | null>(null);
-  const [manualLocationItemId, setManualLocationItemId] = useState<string | null>(null);
-  const [zipCode, setZipCode] = useState("");
   const seededRef = useRef(false);
 
   useEffect(() => {
@@ -157,11 +91,7 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
 
     const channel = supabase
       .channel(`date-board-${coupleId}`)
-      .on(
-        "postgres_changes",
-        { event: "*", schema: "public", table: "list_items", filter: `couple_id=eq.${coupleId}` },
-        fetchItems
-      )
+      .on("postgres_changes", { event: "*", schema: "public", table: "list_items", filter: `couple_id=eq.${coupleId}` }, fetchItems)
       .subscribe();
 
     return () => {
@@ -170,9 +100,9 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [coupleId]);
 
-  const visibleItems = useMemo(() => {
-    return favoritesOnly ? items.filter((item) => item.favorite) : items;
-  }, [favoritesOnly, items]);
+  const visibleItems = useMemo(() => (favoritesOnly ? items.filter((item) => item.favorite) : items), [favoritesOnly, items]);
+  const selectedSection = sections.find((section) => section.id === selectedSectionId) ?? sections[0];
+  const sectionItems = visibleItems.filter((item) => itemBelongsToSection(item, selectedSection));
 
   function notify(message: string) {
     setToast(message);
@@ -180,12 +110,7 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
   }
 
   async function fetchItems() {
-    const { data, error } = await supabase
-      .from("list_items")
-      .select("*")
-      .eq("couple_id", coupleId)
-      .order("created_at", { ascending: true });
-
+    const { data, error } = await supabase.from("list_items").select("*").eq("couple_id", coupleId).order("created_at", { ascending: true });
     if (error) return;
 
     const loadedItems = (data ?? []) as ListItem[];
@@ -202,14 +127,7 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
     const rows = sections.flatMap((section) =>
       defaultDateIdeas[section.id]
         .filter((name) => !existingNames.has(name.toLowerCase()))
-        .map((name) => ({
-          couple_id: coupleId,
-          type: section.id,
-          name,
-          plays: 0,
-          favorite: false,
-          checkout: false,
-        }))
+        .map((name) => ({ couple_id: coupleId, type: section.id, name, plays: 0, favorite: false, checkout: false }))
     );
 
     if (!rows.length) {
@@ -224,13 +142,13 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
     }
   }
 
-  async function addItem(section: DateSection) {
-    const trimmed = (drafts[section.id] ?? "").trim();
+  async function addItem() {
+    const trimmed = (drafts[selectedSection.id] ?? "").trim();
     if (!trimmed) return;
 
     const { error } = await supabase.from("list_items").insert({
       couple_id: coupleId,
-      type: section.id,
+      type: selectedSection.id,
       name: trimmed,
       plays: 0,
       favorite: false,
@@ -242,8 +160,8 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
       return;
     }
 
-    setDrafts((current) => ({ ...current, [section.id]: "" }));
-    setAddingSection(null);
+    setDrafts((current) => ({ ...current, [selectedSection.id]: "" }));
+    setAdding(false);
     notify("Added");
     fetchItems();
   }
@@ -269,172 +187,40 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
     fetchItems();
   }
 
-  function isRandomMovie(item: ListItem) {
-    return item.name.trim().toLowerCase() === "random movie night";
-  }
-
-  function isNearbyTrail(item: ListItem) {
-    return item.name.trim().toLowerCase() === "nearby trail or park";
-  }
-
-  function isCraftSpot(item: ListItem) {
-    return item.name.trim().toLowerCase() === "find a nearby craft spot";
-  }
-
-  function isRandomRestaurant(item: ListItem) {
-    return item.name.trim().toLowerCase() === "random restaurant nearby";
-  }
-
-  function getSpecialAction(item: ListItem) {
-    if (isRandomMovie(item)) return "Movie";
-    if (isNearbyTrail(item)) return "Nearby";
-    if (isCraftSpot(item)) return "Craft";
-    if (isRandomRestaurant(item)) return "Food";
-    return null;
-  }
-
-  function recommendMovie(item: ListItem) {
-    const options = movieRecommendations[movieGenre] ?? movieRecommendations.comedy;
-    const movie = options[Math.floor(Math.random() * options.length)];
-    setRecommendation({
-      itemId: item.id,
-      title: movie,
-      description: `${movieGenre[0].toUpperCase()}${movieGenre.slice(1)} pick for an at-home movie date.`,
-    });
-  }
-
-  function getCurrentPosition() {
-    return new Promise<Coordinates>((resolve, reject) => {
-      if (!navigator.geolocation) {
-        reject(new Error("Location is not available in this browser."));
-        return;
-      }
-
-      navigator.geolocation.getCurrentPosition(
-        (position) =>
-          resolve({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-          }),
-        () => reject(new Error("Could not get your location.")),
-        { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
-      );
-    });
-  }
-
-  function mapsSearchUrl(query: string, coordinates: Coordinates) {
-    const encodedQuery = encodeURIComponent(query);
-    return `https://www.google.com/maps/search/${encodedQuery}/@${coordinates.latitude},${coordinates.longitude},13z`;
-  }
-
-  function mapsSearchUrlForZip(query: string, zip: string) {
-    return `https://www.google.com/maps/search/${encodeURIComponent(`${query} near ${zip}`)}`;
-  }
-
-  function nearbyQueryForItem(item: ListItem) {
-    if (isNearbyTrail(item)) return "trail or park";
-    if (isCraftSpot(item)) return "craft studio pottery painting candle making paint and sip";
-    return `${pricePoint} restaurants`;
-  }
-
-  function nearbyRecommendationForItem(item: ListItem, href: string): Recommendation {
-    if (isNearbyTrail(item)) {
-      return {
-        itemId: item.id,
-        title: "Nearby trail or park",
-        description: "Open a map search near you and pick the spot with the prettiest walk.",
-        href,
-        actionLabel: "Open nearby parks",
-      };
-    }
-
-    if (isCraftSpot(item)) {
-      return {
-        itemId: item.id,
-        title: "Nearby craft spot",
-        description: "Look for pottery painting, candle bars, craft studios, or paint-and-sip places close by.",
-        href,
-        actionLabel: "Open craft spots",
-      };
-    }
-
-    return {
-      itemId: item.id,
-      title: `${pricePoint} restaurant nearby`,
-      description: "Open nearby restaurant ideas at your selected price point and choose the one that feels date-worthy.",
-      href,
-      actionLabel: "Open restaurants",
-    };
-  }
-
-  async function recommendNearby(item: ListItem) {
-    setLocatingItemId(item.id);
-    try {
-      const coordinates = await getCurrentPosition();
-      setManualLocationItemId(null);
-      setRecommendation(nearbyRecommendationForItem(item, mapsSearchUrl(nearbyQueryForItem(item), coordinates)));
-    } catch (error) {
-      setManualLocationItemId(item.id);
-      notify(error instanceof Error ? "Enter a ZIP code instead" : "Enter a ZIP code instead");
-    } finally {
-      setLocatingItemId(null);
-    }
-  }
-
-  function recommendNearbyFromZip(item: ListItem) {
-    const trimmedZip = zipCode.trim();
-    if (!trimmedZip) {
-      notify("Enter a ZIP code");
-      return;
-    }
-
-    setRecommendation(nearbyRecommendationForItem(item, mapsSearchUrlForZip(nearbyQueryForItem(item), trimmedZip)));
-    setManualLocationItemId(null);
-  }
-
-  const selectedSection = sections.find((section) => section.id === selectedSectionId) ?? null;
-
   if (favoritesOnly) {
     const favoriteItems = items.filter((item) => item.favorite);
 
     return (
-      <section className="px-4 pb-28 pt-5 text-[#493343]">
+      <section className="px-4 pb-36 pt-6 text-[#edf3ff]">
         <Toast message={toast} />
-
-        <div className="pb-5">
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#e06f92]">Favorites</p>
-          <h2 className="mt-1 text-3xl font-semibold tracking-tight text-[#3f2a39]">Favorite activities</h2>
-          <p className="mt-2 max-w-md text-sm leading-6 text-[#8b687e]">Everything you heart from the date categories lives here.</p>
+        <div className="mb-5">
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#68e7ff]">Favorites</p>
+          <h2 className="mt-1 text-3xl font-semibold tracking-tight">Saved ideas</h2>
+          <p className="mt-2 text-sm leading-6 text-[#8d98ad]">All the hearted date options in one place.</p>
         </div>
 
         <div className="space-y-3">
           {favoriteItems.length ? (
             favoriteItems.map((item) => {
               const section = getSectionForItem(item);
-
               return (
-                <article key={item.id} className={`rounded-lg border border-white/70 p-4 shadow-lg shadow-[#e06f92]/10 ${section.bg}`}>
+                <article key={item.id} className="rounded-3xl border border-white/10 bg-[#101522]/80 p-4 shadow-2xl shadow-black/25">
                   <div className="flex items-center gap-3">
-                    <button onClick={() => toggleFavorite(item)} className={`rounded-lg p-2 transition hover:bg-white/10 ${section.accent}`}>
-                      <Heart size={19} fill="currentColor" />
+                    <button onClick={() => toggleFavorite(item)} className={`rounded-2xl bg-white/[0.04] p-2 ${section.accent}`}>
+                      <Heart size={18} fill="currentColor" />
                     </button>
                     <div className="min-w-0 flex-1">
-                      <p className={`text-[0.62rem] font-medium uppercase tracking-[0.2em] opacity-60 ${section.accent}`}>{section.title}</p>
-                      <h3 className={`truncate text-sm font-medium ${section.text}`}>{item.name}</h3>
+                      <p className={`text-[0.62rem] font-bold uppercase tracking-[0.22em] ${section.accent}`}>{section.title}</p>
+                      <h3 className="truncate text-sm font-semibold text-[#edf3ff]">{item.name}</h3>
                     </div>
-                    {item.checkout && (
-                      <span className={`inline-flex items-center gap-1 rounded bg-white/60 px-2 py-1 text-xs font-semibold ${section.accent}`}>
-                        <ShoppingBag size={13} />
-                        checkout
-                      </span>
-                    )}
+                    {item.checkout && <span className="rounded-full bg-white/[0.05] px-3 py-1 text-xs text-[#68e7ff]">checkout</span>}
                   </div>
                 </article>
               );
             })
           ) : (
-            <div className="rounded-lg border border-dashed border-[#f3bfd0] bg-white/55 p-8 text-center text-sm text-[#8b687e]">
-              No favorite activities yet. Tap a heart next to a date idea to save it here.
+            <div className="rounded-3xl border border-dashed border-white/10 bg-white/[0.03] p-8 text-center text-sm text-[#8d98ad]">
+              No favorites yet.
             </div>
           )}
         </div>
@@ -442,238 +228,108 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
     );
   }
 
-  if (selectedSection) {
-    const sectionItems = visibleItems.filter((item) => itemBelongsToSection(item, selectedSection));
-    const emptyText = "Add the first activity.";
-
-    return (
-      <section className="px-4 pb-28 pt-5 text-[#493343]">
-        <Toast message={toast} />
-        <button
-          onClick={() => setSelectedSectionId(null)}
-          className={`mb-5 rounded-md px-2 py-2 text-sm font-semibold transition hover:bg-white/60 ${selectedSection.accent}`}
-        >
-          Back to categories
-        </button>
-
-        <article className={`relative overflow-hidden rounded-lg border ${selectedSection.border} p-6 shadow-2xl shadow-[#e06f92]/10 ${selectedSection.bg} ${selectedSection.glow} before:pointer-events-none before:absolute before:inset-0`}>
-          <div className="relative z-10">
-            <p className={`text-[0.62rem] font-medium uppercase tracking-[0.24em] opacity-60 ${selectedSection.accent}`}>{selectedSection.eyebrow}</p>
-            <h2 className={`mt-2 font-serif text-4xl font-light leading-none tracking-tight ${selectedSection.text}`}>{selectedSection.title}</h2>
-            <p className="mt-3 max-w-md text-sm leading-6 text-[#7d6175]">{selectedSection.description}</p>
-
-            <div className="mt-8 flex flex-col gap-2">
-              {sectionItems.length ? (
-                sectionItems.map((item) => {
-                  const specialAction = getSpecialAction(item);
-                  const itemRecommendation = recommendation?.itemId === item.id ? recommendation : null;
-
-                  return (
-                    <div
-                      key={item.id}
-                      className={`group rounded-md px-3 py-3 transition ${
-                        item.favorite ? "bg-white/65" : "bg-white/35 hover:bg-white/60"
-                      }`}
-                    >
-                      <div className="flex min-h-12 cursor-pointer items-center gap-3">
-                        <button
-                          onClick={() => toggleFavorite(item)}
-                          className={`rounded-lg p-1.5 transition hover:bg-white/10 ${selectedSection.accent}`}
-                          aria-label={item.favorite ? `Unfavorite ${item.name}` : `Favorite ${item.name}`}
-                        >
-                          <Heart size={18} fill={item.favorite ? "currentColor" : "none"} />
-                        </button>
-                        <span className={`min-w-0 flex-1 text-sm font-light leading-5 ${selectedSection.text}`}>{item.name}</span>
-                        {specialAction && (
-                          <button
-                            onClick={(event) => {
-                              event.stopPropagation();
-                              if (isRandomMovie(item)) recommendMovie(item);
-                              else recommendNearby(item);
-                            }}
-                            className={`inline-flex items-center gap-1 rounded bg-white/75 px-2 py-1 text-[0.65rem] font-semibold ${selectedSection.accent}`}
-                          >
-                            {isRandomMovie(item) ? <Sparkles size={13} /> : <MapPin size={13} />}
-                            {locatingItemId === item.id ? "finding" : specialAction}
-                          </button>
-                        )}
-                        <button
-                          onClick={(event) => {
-                            event.stopPropagation();
-                            toggleCheckout(item);
-                          }}
-                          className={`inline-flex items-center gap-1 rounded bg-white/60 px-2 py-1 text-[0.65rem] font-semibold ${selectedSection.accent}`}
-                        >
-                          <ShoppingBag size={13} />
-                          {item.checkout ? "in checkout" : "add"}
-                        </button>
-                        <button
-                          onClick={(event) => {
-                            event.stopPropagation();
-                            deleteItem(item);
-                          }}
-                          className="rounded p-1.5 text-[#9a7187] transition hover:bg-white/60 hover:text-[#c7466f]"
-                        >
-                          <Trash2 size={14} />
-                        </button>
-                      </div>
-
-                      {isRandomMovie(item) && (
-                        <div className="mt-2 flex flex-wrap items-center gap-2 pl-10">
-                          <select
-                            value={movieGenre}
-                            onChange={(event) => setMovieGenre(event.target.value)}
-                            className="rounded-md border border-white/70 bg-white/75 px-2 py-1.5 text-xs font-medium text-[#493343] outline-none"
-                          >
-                            {Object.keys(movieRecommendations).map((genre) => (
-                              <option key={genre} value={genre}>
-                                {genre[0].toUpperCase()}
-                                {genre.slice(1)}
-                              </option>
-                            ))}
-                          </select>
-                          <span className="text-xs text-[#8b687e]">Pick a genre, then tap Movie.</span>
-                        </div>
-                      )}
-
-                      {isRandomRestaurant(item) && (
-                        <div className="mt-2 flex flex-wrap items-center gap-2 pl-10">
-                          {["$", "$$", "$$$"].map((price) => (
-                            <button
-                              key={price}
-                              onClick={() => setPricePoint(price)}
-                              className={`rounded-md border px-2 py-1 text-xs font-semibold transition ${
-                                pricePoint === price
-                                  ? "border-[#ffd67d] bg-[#ffe36e] text-[#6e4d09]"
-                                  : "border-white/70 bg-white/55 text-[#8b687e]"
-                              }`}
-                            >
-                              {price}
-                            </button>
-                          ))}
-                          <span className="text-xs text-[#8b687e]">Choose a price point, then tap Food.</span>
-                        </div>
-                      )}
-
-                      {manualLocationItemId === item.id && (
-                        <div className="mt-2 flex flex-wrap items-center gap-2 pl-10">
-                          <input
-                            inputMode="numeric"
-                            value={zipCode}
-                            onChange={(event) => setZipCode(event.target.value)}
-                            onKeyDown={(event) => {
-                              if (event.key === "Enter") recommendNearbyFromZip(item);
-                            }}
-                            placeholder="ZIP code"
-                            className="w-28 rounded-md border border-white/70 bg-white/75 px-2 py-1.5 text-xs font-medium text-[#493343] outline-none placeholder:text-[#b48ca0]"
-                          />
-                          <button
-                            onClick={() => recommendNearbyFromZip(item)}
-                            className={`rounded-md bg-white/75 px-2 py-1.5 text-xs font-semibold ${selectedSection.accent}`}
-                          >
-                            Search
-                          </button>
-                          <span className="text-xs text-[#8b687e]">Location did not work, so use ZIP instead.</span>
-                        </div>
-                      )}
-
-                      {itemRecommendation && (
-                        <div className="mt-3 rounded-lg border border-white/70 bg-white/70 p-3 pl-4 shadow-sm">
-                          <p className={`text-sm font-semibold ${selectedSection.text}`}>{itemRecommendation.title}</p>
-                          <p className="mt-1 text-xs leading-5 text-[#8b687e]">{itemRecommendation.description}</p>
-                          {hasRecommendationLink(itemRecommendation) && (
-                            <a
-                              href={itemRecommendation.href}
-                              target="_blank"
-                              rel="noreferrer"
-                              className={`mt-2 inline-flex items-center gap-1 text-xs font-semibold ${selectedSection.accent}`}
-                            >
-                              {itemRecommendation.actionLabel}
-                              <ExternalLink size={12} />
-                            </a>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })
-              ) : (
-                <div className="rounded-md border border-dashed border-white/70 px-3 py-6 text-sm text-[#9a7187]">{emptyText}</div>
-              )}
-            </div>
-
-            {!favoritesOnly && (
-              <div className="mt-7">
-                {addingSection === selectedSection.id ? (
-                  <div className="flex gap-2">
-                    <input
-                      autoFocus
-                      value={drafts[selectedSection.id] ?? ""}
-                      onChange={(event) => setDrafts((current) => ({ ...current, [selectedSection.id]: event.target.value }))}
-                      onKeyDown={(event) => {
-                        if (event.key === "Enter") addItem(selectedSection);
-                        if (event.key === "Escape") setAddingSection(null);
-                      }}
-                      placeholder="New activity..."
-                      className="min-w-0 flex-1 rounded-md border border-white/70 bg-white/70 px-3 py-2 text-sm text-[#493343] outline-none placeholder:text-[#b48ca0]"
-                    />
-                    <button onClick={() => addItem(selectedSection)} className={`rounded-md border px-3 py-2 text-sm font-semibold ${selectedSection.border} ${selectedSection.accent} bg-white/65`}>
-                      Add
-                    </button>
-                  </div>
-                ) : (
-                  <button
-                    onClick={() => setAddingSection(selectedSection.id)}
-                    className={`inline-flex items-center gap-2 rounded-md px-2 py-2 text-xs font-semibold tracking-wide transition hover:bg-white/60 ${selectedSection.accent} opacity-75 hover:opacity-100`}
-                  >
-                    <Plus size={14} />
-                    Add activity
-                  </button>
-                )}
-              </div>
-            )}
-          </div>
-        </article>
-      </section>
-    );
-  }
-
   return (
-    <section className="px-4 pb-28 pt-5 text-[#493343]">
+    <section className="px-4 pb-36 pt-6 text-[#edf3ff]">
       <Toast message={toast} />
 
-      <div className="pb-5">
-        <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#e06f92]">
-          {favoritesOnly ? "Saved dates" : "Date ideas"}
-        </p>
-        <h2 className="mt-1 text-3xl font-semibold tracking-tight text-[#3f2a39]">{favoritesOnly ? "Favorites" : "Dates"}</h2>
-        <p className="mt-2 max-w-md text-sm leading-6 text-[#8b687e]">Choose a category, then pick or add activities inside it.</p>
+      <div className="mb-3">
+        <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#68e7ff]">Date deck</p>
+        <h2 className="mt-1 text-2xl font-semibold tracking-tight">Pick a lane</h2>
       </div>
 
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-        {sections.map((section, index) => {
-          const sectionItems = visibleItems.filter((item) => itemBelongsToSection(item, section));
-          const countLabel = `${sectionItems.length} ${sectionItems.length === 1 ? "activity" : "activities"}`;
+      <div className="grid grid-cols-2 gap-2">
+        {sections.map((section) => {
+          const count = visibleItems.filter((item) => itemBelongsToSection(item, section)).length;
+          const selected = section.id === selectedSection.id;
 
           return (
             <button
               key={section.id}
-              onClick={() => setSelectedSectionId(section.id)}
-              className={`relative overflow-hidden rounded-lg border ${section.border} p-6 text-left shadow-2xl shadow-[#e06f92]/10 transition hover:-translate-y-0.5 hover:shadow-[#e06f92]/20 ${section.bg} ${section.glow} before:pointer-events-none before:absolute before:inset-0 before:opacity-100`}
+              onClick={() => {
+                setSelectedSectionId(section.id);
+                setAdding(false);
+              }}
+              className={`relative min-h-[4.6rem] overflow-hidden rounded-2xl border bg-gradient-to-br px-3 py-3 text-left shadow-xl shadow-black/20 transition ${
+                section.gradient
+              } ${selected ? `${section.ring} scale-[1.01]` : "border-white/8 opacity-78 hover:opacity-100"}`}
             >
-              <div className={`pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-current to-transparent ${section.accent} opacity-60`} />
-              <div className="relative z-10">
-                <p className={`text-[0.62rem] font-medium uppercase tracking-[0.24em] opacity-60 ${section.accent}`}>{section.eyebrow}</p>
-                <h3 className={`mt-2 font-serif text-4xl font-light leading-none tracking-tight ${section.text}`}>{section.title}</h3>
-                <p className="mt-4 text-sm leading-6 text-[#7d6175]">{section.description}</p>
-                <div className="mt-7 flex items-center justify-between">
-                  <span className={`rounded px-2 py-1 text-[0.68rem] font-semibold ${section.accent} bg-white/60`}>{countLabel}</span>
-                  <span className={`text-xs font-semibold ${section.accent}`}>Open</span>
+              <div className="absolute -right-10 -top-10 h-20 w-20 rounded-full bg-white/10 blur-2xl" />
+              <div className="relative z-10 flex h-full items-center justify-between gap-3">
+                <div>
+                  <p className={`text-[0.6rem] font-bold uppercase tracking-[0.22em] ${section.accent}`}>{section.eyebrow}</p>
+                  <h3 className="mt-1 text-base font-semibold tracking-tight text-white">{section.title}</h3>
                 </div>
+                <span className="shrink-0 rounded-full bg-black/20 px-2 py-1 text-[0.65rem] font-semibold text-[#c9d4ea]">{count}</span>
               </div>
             </button>
           );
         })}
+      </div>
+
+      <div className="mt-5 rounded-[1.6rem] border border-white/8 bg-[#080d19]/70 p-3 shadow-xl shadow-black/20">
+        <div className="mb-2 flex items-center justify-between gap-3 px-1">
+          <div>
+            <p className={`text-[0.62rem] font-bold uppercase tracking-[0.22em] ${selectedSection.accent}`}>{selectedSection.eyebrow}</p>
+            <h3 className="mt-0.5 text-xl font-semibold tracking-tight">{selectedSection.title}</h3>
+          </div>
+          <button onClick={() => setAdding((value) => !value)} className={`inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/[0.06] ${selectedSection.accent}`}>
+            <Plus size={17} />
+          </button>
+        </div>
+
+        {adding && (
+          <div className="mb-4 flex gap-2">
+            <input
+              autoFocus
+              value={drafts[selectedSection.id] ?? ""}
+              onChange={(event) => setDrafts((current) => ({ ...current, [selectedSection.id]: event.target.value }))}
+              onKeyDown={(event) => {
+                if (event.key === "Enter") addItem();
+                if (event.key === "Escape") setAdding(false);
+              }}
+              placeholder="New date idea..."
+              className="min-w-0 flex-1 rounded-2xl border border-white/10 bg-black/30 px-3 py-2 text-sm text-white outline-none placeholder:text-[#667087]"
+            />
+            <button onClick={addItem} className="rounded-2xl bg-[#68e7ff] px-4 text-sm font-bold text-[#071016]">
+              Save
+            </button>
+          </div>
+        )}
+
+        <div className="divide-y divide-white/[0.06]">
+          {sectionItems.length ? (
+            sectionItems.map((item) => (
+              <div key={item.id} className="group flex min-h-12 items-center gap-2 px-1 py-2.5">
+                <button
+                  onClick={() => toggleFavorite(item)}
+                  className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition hover:bg-white/[0.05] ${item.favorite ? selectedSection.accent : "text-[#667087]"}`}
+                  aria-label={item.favorite ? `Unfavorite ${item.name}` : `Favorite ${item.name}`}
+                >
+                  <Heart size={16} fill={item.favorite ? "currentColor" : "none"} />
+                </button>
+                <span className="min-w-0 flex-1 text-sm font-medium leading-5 text-[#edf3ff]">{item.name}</span>
+                <button
+                  onClick={() => toggleCheckout(item)}
+                  className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition ${
+                    item.checkout ? "bg-[#68e7ff]/15 text-[#68e7ff]" : "bg-white/[0.04] text-[#8d98ad] hover:bg-[#68e7ff]/10 hover:text-[#68e7ff]"
+                  }`}
+                  aria-label={item.checkout ? `Remove ${item.name} from checkout` : `Add ${item.name} to checkout`}
+                >
+                  {item.checkout ? <Check size={16} /> : <ShoppingBag size={15} />}
+                </button>
+                <button
+                  onClick={() => deleteItem(item)}
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[#4f5a70] opacity-70 transition hover:bg-[#ff6fb1]/10 hover:text-[#ff6fb1] group-hover:opacity-100"
+                  aria-label={`Delete ${item.name}`}
+                >
+                  <Trash2 size={14} />
+                </button>
+              </div>
+            ))
+          ) : (
+            <div className="rounded-2xl border border-dashed border-white/10 p-6 text-center text-sm text-[#8d98ad]">No ideas here yet.</div>
+          )}
+        </div>
       </div>
     </section>
   );

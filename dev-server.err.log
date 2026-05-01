@@ -1,0 +1,1696 @@
+[browser] TypeError: Failed to fetch
+    at new Promise (<anonymous>)
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  4 | import { useRouter } from "next/navigation";
+  5 | import BottomNav from "@/components/BottomNav";
+> 6 | import ListPanel from "@/components/ListPanel";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import PartnerStatus from "@/components/PartnerStatus";
+  8 | import PickerPage from "@/components/PickerPage";
+  9 | import StatsPage from "@/components/StatsPage";
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  4 | import { useRouter } from "next/navigation";
+  5 | import BottomNav from "@/components/BottomNav";
+> 6 | import ListPanel from "@/components/ListPanel";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import PartnerStatus from "@/components/PartnerStatus";
+  8 | import PickerPage from "@/components/PickerPage";
+  9 | import StatsPage from "@/components/StatsPage";
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  4 | import { useRouter } from "next/navigation";
+  5 | import BottomNav from "@/components/BottomNav";
+> 6 | import ListPanel from "@/components/ListPanel";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import PartnerStatus from "@/components/PartnerStatus";
+  8 | import PickerPage from "@/components/PickerPage";
+  9 | import StatsPage from "@/components/StatsPage";
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  4 | import { useRouter } from "next/navigation";
+  5 | import BottomNav from "@/components/BottomNav";
+> 6 | import ListPanel from "@/components/ListPanel";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import PartnerStatus from "@/components/PartnerStatus";
+  8 | import PickerPage from "@/components/PickerPage";
+  9 | import StatsPage from "@/components/StatsPage";
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m8 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+  [90m9 |[0m [36mimport[0m [33mStatsPage[0m [36mfrom[0m [32m"@/components/StatsPage"[0m;
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] Uncaught Error: ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  4 | import { useRouter } from "next/navigation";
+  5 | import BottomNav from "@/components/BottomNav";
+> 6 | import ListPanel from "@/components/ListPanel";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import PartnerStatus from "@/components/PartnerStatus";
+  8 | import PickerPage from "@/components/PickerPage";
+  9 | import StatsPage from "@/components/StatsPage";
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/dashboard/page.tsx:6:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/dashboard/page.tsx:6:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] Uncaught Error: ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  4 | import { useRouter } from "next/navigation";
+  5 | import BottomNav from "@/components/BottomNav";
+> 6 | import ListPanel from "@/components/ListPanel";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import PartnerStatus from "@/components/PartnerStatus";
+  8 | import PickerPage from "@/components/PickerPage";
+  9 | import StatsPage from "@/components/StatsPage";
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/dashboard/page.tsx:6:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/dashboard/page.tsx:6:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  4 | import { useRouter } from "next/navigation";
+  5 | import BottomNav from "@/components/BottomNav";
+> 6 | import ListPanel from "@/components/ListPanel";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import PartnerStatus from "@/components/PartnerStatus";
+  8 | import PickerPage from "@/components/PickerPage";
+  9 | import StatsPage from "@/components/StatsPage";
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ListPanel'
+  4 | import { useRouter } from "next/navigation";
+  5 | import BottomNav from "@/components/BottomNav";
+> 6 | import ListPanel from "@/components/ListPanel";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import PartnerStatus from "@/components/PartnerStatus";
+  8 | import PickerPage from "@/components/PickerPage";
+  9 | import StatsPage from "@/components/StatsPage";
+
+Import map: aliased to relative './components/ListPanel' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 

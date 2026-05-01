@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import BottomNav from "@/components/BottomNav";
-import DisconnectButton from "@/components/DisconnectButton";
 import ListPanel from "@/components/ListPanel";
 import PartnerStatus from "@/components/PartnerStatus";
 import PickerPage from "@/components/PickerPage";
@@ -60,7 +59,7 @@ export default function DashboardPage() {
   }
 
   if (loading) {
-    return <main className="flex min-h-screen items-center justify-center text-[#8b687e]">Loading...</main>;
+    return <main className="flex min-h-screen items-center justify-center bg-[#07080a] text-[#8d98ad]">Loading...</main>;
   }
 
   if (!username) {
@@ -68,25 +67,18 @@ export default function DashboardPage() {
   }
 
   if (!coupleId) {
-    return <main className="flex min-h-screen items-center justify-center text-[#8b687e]">Preparing your planner...</main>;
+    return <main className="flex min-h-screen items-center justify-center bg-[#07080a] text-[#8d98ad]">Preparing your planner...</main>;
   }
 
   return (
-    <main className="min-h-screen text-[#493343]">
-      <header className="mx-auto max-w-md px-4 pt-5">
-        <div className="flex items-center justify-between gap-3">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#e06f92]">Our Date Planner</p>
-            <h1 className="mt-1 text-2xl font-semibold tracking-tight text-[#3f2a39]">Date planner</h1>
-          </div>
-          <DisconnectButton />
-        </div>
-        <div className="mt-4">
-          <PartnerStatus coupleId={coupleId} />
-        </div>
+    <main className="min-h-screen overflow-hidden text-[#edf3ff]">
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-[linear-gradient(180deg,rgba(9,15,31,0.64),rgba(3,4,6,0.96))]" />
+
+      <header className="mx-auto max-w-6xl px-4 pt-4 md:px-6">
+        <PartnerStatus coupleId={coupleId} />
       </header>
 
-      <div className={activeTab === "lists" || activeTab === "favorites" ? "mx-auto max-w-7xl" : "mx-auto max-w-md"}>
+      <div className={activeTab === "lists" || activeTab === "favorites" ? "mx-auto max-w-6xl" : "mx-auto max-w-2xl"}>
         {activeTab === "lists" && <ListPanel coupleId={coupleId} />}
         {activeTab === "favorites" && <ListPanel coupleId={coupleId} favoritesOnly />}
         {activeTab === "picker" && <PickerPage coupleId={coupleId} />}
