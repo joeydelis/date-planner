@@ -102,7 +102,9 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
 
   const visibleItems = useMemo(() => (favoritesOnly ? items.filter((item) => item.favorite) : items), [favoritesOnly, items]);
   const selectedSection = sections.find((section) => section.id === selectedSectionId) ?? sections[0];
-  const sectionItems = visibleItems.filter((item) => itemBelongsToSection(item, selectedSection));
+  const sectionItems = visibleItems
+    .filter((item) => itemBelongsToSection(item, selectedSection))
+    .sort((a, b) => Number(b.favorite) - Number(a.favorite) || a.name.localeCompare(b.name));
 
   function notify(message: string) {
     setToast(message);
@@ -233,8 +235,9 @@ export default function ListPanel({ coupleId, favoritesOnly = false }: Props) {
       <Toast message={toast} />
 
       <div className="mb-3">
-        <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#68e7ff]">Date deck</p>
+        <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#68e7ff]">Make page</p>
         <h2 className="mt-1 text-2xl font-semibold tracking-tight">Pick a lane</h2>
+        <p className="mt-1 text-xs text-[#8d98ad]">Favorites rise to the top inside each category.</p>
       </div>
 
       <div className="grid grid-cols-2 gap-2">

@@ -1,0 +1,1689 @@
+[browser] TypeError: Failed to fetch
+    at new Promise (<anonymous>)
+[browser] TypeError: Failed to fetch
+    at new Promise (<anonymous>)
+[browser] TypeError: Failed to fetch
+    at new Promise (<anonymous>)
+[browser] TypeError: Failed to fetch
+    at new Promise (<anonymous>)
+[browser] TypeError: Failed to fetch
+    at new Promise (<anonymous>)
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] Uncaught Error: ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  4 | import { useRouter } from "next/navigation";
+  5 | import BottomNav from "@/components/BottomNav";
+> 6 | import ItineraryPage from "@/components/ItineraryPage";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ListPanel from "@/components/ListPanel";
+  8 | import PartnerStatus from "@/components/PartnerStatus";
+  9 | import PickerPage from "@/components/PickerPage";
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/dashboard/page.tsx:6:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/dashboard/page.tsx:6:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+⨯ ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  [90m4 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m [33mBottomNav[0m [36mfrom[0m [32m"@/components/BottomNav"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m [33mItineraryPage[0m [36mfrom[0m [32m"@/components/ItineraryPage"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m [33mListPanel[0m [36mfrom[0m [32m"@/components/ListPanel"[0m;
+  [90m8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/dashboard/page.tsx:10:1
+Module not found: Can't resolve '@/components/ProfilePage'
+  [90m 8 |[0m [36mimport[0m [33mPartnerStatus[0m [36mfrom[0m [32m"@/components/PartnerStatus"[0m;
+  [90m 9 |[0m [36mimport[0m [33mPickerPage[0m [36mfrom[0m [32m"@/components/PickerPage"[0m;
+[31m[1m>[0m [90m10 |[0m [36mimport[0m [33mProfilePage[0m [36mfrom[0m [32m"@/components/ProfilePage"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [36mimport[0m [33mUsernameSetup[0m [36mfrom[0m [32m"@/components/UsernameSetup"[0m;
+  [90m12 |[0m [36mimport[0m { createCouple, getUserCoupleId } [36mfrom[0m [32m"@/lib/couples"[0m;
+  [90m13 |[0m [36mimport[0m { getMyProfile } [36mfrom[0m [32m"@/lib/profiles"[0m;
+
+Import map: aliased to relative './components/ProfilePage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] Uncaught Error: ./app/dashboard/page.tsx:6:1
+Module not found: Can't resolve '@/components/ItineraryPage'
+  4 | import { useRouter } from "next/navigation";
+  5 | import BottomNav from "@/components/BottomNav";
+> 6 | import ItineraryPage from "@/components/ItineraryPage";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ListPanel from "@/components/ListPanel";
+  8 | import PartnerStatus from "@/components/PartnerStatus";
+  9 | import PickerPage from "@/components/PickerPage";
+
+Import map: aliased to relative './components/ItineraryPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/dashboard/page.tsx:6:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/dashboard/page.tsx:6:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] TypeError: Failed to fetch
+    at new Promise (<anonymous>)
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch
+[browser] TypeError: Failed to fetch

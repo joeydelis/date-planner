@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import BottomNav from "@/components/BottomNav";
+import ItineraryPage from "@/components/ItineraryPage";
 import ListPanel from "@/components/ListPanel";
 import PartnerStatus from "@/components/PartnerStatus";
 import PickerPage from "@/components/PickerPage";
-import StatsPage from "@/components/StatsPage";
+import ProfilePage from "@/components/ProfilePage";
 import UsernameSetup from "@/components/UsernameSetup";
 import { createCouple, getUserCoupleId } from "@/lib/couples";
 import { getMyProfile } from "@/lib/profiles";
@@ -16,7 +17,7 @@ import type { Tab } from "@/types";
 const LAST_TAB_KEY = "our-date-planner-last-tab";
 
 function isTab(value: string | null): value is Tab {
-  return value === "lists" || value === "favorites" || value === "picker" || value === "stats";
+  return value === "lists" || value === "itinerary" || value === "picker" || value === "profile";
 }
 
 export default function DashboardPage() {
@@ -78,11 +79,11 @@ export default function DashboardPage() {
         <PartnerStatus coupleId={coupleId} />
       </header>
 
-      <div className={activeTab === "lists" || activeTab === "favorites" ? "mx-auto max-w-6xl" : "mx-auto max-w-2xl"}>
+      <div className={activeTab === "lists" ? "mx-auto max-w-6xl" : "mx-auto max-w-2xl"}>
         {activeTab === "lists" && <ListPanel coupleId={coupleId} />}
-        {activeTab === "favorites" && <ListPanel coupleId={coupleId} favoritesOnly />}
+        {activeTab === "itinerary" && <ItineraryPage coupleId={coupleId} />}
         {activeTab === "picker" && <PickerPage coupleId={coupleId} />}
-        {activeTab === "stats" && <StatsPage coupleId={coupleId} />}
+        {activeTab === "profile" && <ProfilePage coupleId={coupleId} />}
       </div>
 
       <BottomNav active={activeTab} setActive={handleTabChange} />

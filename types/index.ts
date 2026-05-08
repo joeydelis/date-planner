@@ -11,7 +11,7 @@ export type ListType =
   | "restaurants"
   | "custom";
 
-export type Tab = "lists" | "favorites" | "picker" | "stats";
+export type Tab = "lists" | "itinerary" | "picker" | "profile";
 
 export interface ListItem {
   id: string;

@@ -1,6 +1,6 @@
 "use client";
 
-import { ChartNoAxesColumn, Heart, ListChecks, Sparkles } from "lucide-react";
+import { ListChecks, Route, Sparkles, UserRound } from "lucide-react";
 import type { Tab } from "@/types";
 
 type Props = {
@@ -9,10 +9,10 @@ type Props = {
 };
 
 const tabs = [
-  { id: "lists" as const, icon: ListChecks, label: "Lists" },
-  { id: "favorites" as const, icon: Heart, label: "Favorites" },
+  { id: "lists" as const, icon: ListChecks, label: "Make" },
+  { id: "itinerary" as const, icon: Route, label: "Itinerary" },
   { id: "picker" as const, icon: Sparkles, label: "Activities" },
-  { id: "stats" as const, icon: ChartNoAxesColumn, label: "Stats" },
+  { id: "profile" as const, icon: UserRound, label: "Profile" },
 ];
 
 export default function BottomNav({ active, setActive }: Props) {

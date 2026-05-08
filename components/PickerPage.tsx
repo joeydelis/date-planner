@@ -1,9 +1,10 @@
 "use client";
 
 import confetti from "canvas-confetti";
-import { CalendarDays, Check, ExternalLink, Heart, MapPin, Plus, Shuffle, ShoppingBag, Sparkles, Trash2 } from "lucide-react";
+import { CalendarDays, CalendarPlus, Check, ExternalLink, Heart, MapPin, Plus, Route, Shuffle, ShoppingBag, Sparkles, Trash2 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import Toast from "@/components/Toast";
+import { buildItinerary, downloadCalendarFile } from "@/lib/calendar";
 import { supabase } from "@/lib/supabase";
 import type { ListItem, ListType, ScheduledDate } from "@/types";
 
@@ -148,6 +149,7 @@ export default function PickerPage({ coupleId }: Props) {
   const [movieChoices, setMovieChoices] = useState<string[]>([]);
   const [placeChoices, setPlaceChoices] = useState<PlaceChoice[]>([]);
   const [suggestionsLoading, setSuggestionsLoading] = useState(false);
+  const [itineraryDateId, setItineraryDateId] = useState<string | null>(null);
 
   useEffect(() => {
     loadItems();
@@ -247,6 +249,18 @@ export default function PickerPage({ coupleId }: Props) {
     const randomItem = checkoutItems[Math.floor(Math.random() * checkoutItems.length)];
     setSelectedIds(new Set([randomItem.id]));
     notify(`Selected ${randomItem.name}`);
+  }
+
+  async function surpriseMe() {
+    const pool = items.length ? items : checkoutItems;
+    if (!pool.length) return;
+    const randomItem = pool[Math.floor(Math.random() * pool.length)];
+    if (!randomItem.checkout) {
+      await supabase.from("list_items").update({ checkout: true }).eq("id", randomItem.id);
+      await loadItems();
+    }
+    setSelectedIds(new Set([randomItem.id]));
+    notify(`Surprise: ${randomItem.name}`);
   }
 
   async function scheduleSelected() {
@@ -498,7 +512,7 @@ export default function PickerPage({ coupleId }: Props) {
                 </div>
 
                 {isSuggestionStarter(item) && (
-                  <div className="mt-3 rounded-lg border border-white/70 bg-white/55 p-3">
+                  <div className="mt-3 rounded-2xl border border-white/10 bg-black/20 p-3">
                     <p className={`text-xs font-bold uppercase tracking-[0.2em] ${section.accent}`}>Choose in app</p>
 
                     {isRandomMovie(item) && (
@@ -506,7 +520,7 @@ export default function PickerPage({ coupleId }: Props) {
                         <select
                           value={movieGenre}
                           onChange={(event) => setMovieGenre(event.target.value)}
-                          className="rounded-md border border-[#f3bfd0] bg-white px-2 py-2 text-xs font-medium text-[#493343] outline-none"
+                          className="app-input rounded-xl px-3 py-2 text-xs font-medium outline-none"
                         >
                           {Object.keys(movieRecommendations).map((genre) => (
                             <option key={genre} value={genre}>
@@ -517,7 +531,7 @@ export default function PickerPage({ coupleId }: Props) {
                         </select>
                         <button
                           onClick={() => showMovieChoices(item)}
-                          className={`inline-flex items-center gap-1 rounded-md bg-white px-3 py-2 text-xs font-semibold ${section.accent}`}
+                          className={`inline-flex items-center gap-1 rounded-xl border border-white/10 bg-white/[0.06] px-3 py-2 text-xs font-semibold ${section.accent}`}
                         >
                           <Sparkles size={14} />
                           Show movies
@@ -533,8 +547,8 @@ export default function PickerPage({ coupleId }: Props) {
                             onClick={() => setPricePoint(price)}
                             className={`rounded-md border px-3 py-2 text-xs font-semibold transition ${
                               pricePoint === price
-                                ? "border-[#ffd67d] bg-[#ffe36e] text-[#6e4d09]"
-                                : "border-white/70 bg-white/75 text-[#8b687e]"
+                                ? "border-[#68e7ff]/35 bg-[#68e7ff]/14 text-[#68e7ff]"
+                                : "border-white/10 bg-white/[0.045] text-[#8d98ad]"
                             }`}
                           >
                             {price}
@@ -548,7 +562,7 @@ export default function PickerPage({ coupleId }: Props) {
                         <button
                           onClick={() => showNearbyChoices(item)}
                           disabled={suggestionsLoading && suggestionItemId === item.id}
-                          className={`inline-flex items-center gap-1 rounded-md bg-white px-3 py-2 text-xs font-semibold ${section.accent} disabled:opacity-50`}
+                          className={`inline-flex items-center gap-1 rounded-xl border border-white/10 bg-white/[0.06] px-3 py-2 text-xs font-semibold ${section.accent} disabled:opacity-50`}
                         >
                           <MapPin size={14} />
                           {suggestionsLoading && suggestionItemId === item.id ? "Finding..." : "Use my location"}
@@ -561,11 +575,11 @@ export default function PickerPage({ coupleId }: Props) {
                             if (event.key === "Enter") showNearbyChoices(item, zipCode.trim());
                           }}
                           placeholder="ZIP code"
-                          className="w-28 rounded-md border border-[#f3bfd0] bg-white px-2 py-2 text-xs font-medium text-[#493343] outline-none placeholder:text-[#b48ca0]"
+                          className="app-input w-28 rounded-xl px-3 py-2 text-xs font-medium outline-none"
                         />
                         <button
                           onClick={() => showNearbyChoices(item, zipCode.trim())}
-                          className={`rounded-md bg-white px-3 py-2 text-xs font-semibold ${section.accent}`}
+                          className={`rounded-xl border border-white/10 bg-white/[0.06] px-3 py-2 text-xs font-semibold ${section.accent}`}
                         >
                           Search
                         </button>
@@ -573,7 +587,7 @@ export default function PickerPage({ coupleId }: Props) {
                     )}
 
                     {manualLocationItemId === item.id && (
-                      <p className="mt-2 text-xs text-[#8b687e]">Location did not work, so enter a ZIP code and tap Search.</p>
+                      <p className="mt-2 text-xs text-[#8d98ad]">Location did not work, so enter a ZIP code and tap Search.</p>
                     )}
 
                     {suggestionItemId === item.id && movieChoices.length > 0 && (
@@ -582,7 +596,7 @@ export default function PickerPage({ coupleId }: Props) {
                           <button
                             key={movie}
                             onClick={() => addSuggestionToCheckout(item, `Movie night: ${movie}`, `${movieGenre} movie`)}
-                            className="flex items-center justify-between gap-3 rounded-md border border-white/70 bg-white/75 px-3 py-2 text-left text-sm font-semibold text-[#493343]"
+                            className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/[0.045] px-3 py-2 text-left text-sm font-semibold text-white"
                           >
                             <span>{movie}</span>
                             <Plus size={15} />
@@ -594,11 +608,11 @@ export default function PickerPage({ coupleId }: Props) {
                     {suggestionItemId === item.id && placeChoices.length > 0 && (
                       <div className="mt-3 grid gap-2">
                         {placeChoices.map((place) => (
-                          <div key={place.id} className="rounded-md border border-white/70 bg-white/75 p-3">
+                          <div key={place.id} className="rounded-xl border border-white/10 bg-white/[0.045] p-3">
                             <div className="flex items-start justify-between gap-3">
                               <div className="min-w-0">
-                                <p className="font-semibold text-[#493343]">{place.name}</p>
-                                <p className="mt-1 text-xs text-[#8b687e]">{place.detail}</p>
+                                <p className="font-semibold text-white">{place.name}</p>
+                                <p className="mt-1 text-xs text-[#8d98ad]">{place.detail}</p>
                               </div>
                               <a href={place.href} target="_blank" rel="noreferrer" className={`rounded-md p-1.5 ${section.accent}`} aria-label={`Open ${place.name} on map`}>
                                 <ExternalLink size={15} />
@@ -606,7 +620,7 @@ export default function PickerPage({ coupleId }: Props) {
                             </div>
                             <button
                               onClick={() => addSuggestionToCheckout(item, place.name, place.detail)}
-                              className={`mt-3 inline-flex items-center gap-1 rounded-md bg-white px-3 py-2 text-xs font-semibold ${section.accent}`}
+                              className={`mt-3 inline-flex items-center gap-1 rounded-xl border border-white/10 bg-white/[0.06] px-3 py-2 text-xs font-semibold ${section.accent}`}
                             >
                               <Plus size={14} />
                               Add this choice
@@ -633,14 +647,24 @@ export default function PickerPage({ coupleId }: Props) {
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#68e7ff]">Schedule</p>
             <h3 className="mt-1 text-lg font-semibold tracking-tight text-white">{selectedItems.length || "No"} selected</h3>
           </div>
-          <button
-            onClick={pickRandom}
-            disabled={!checkoutItems.length}
-            className="inline-flex items-center gap-2 rounded-2xl border border-[#68e7ff]/20 bg-[#68e7ff]/12 px-3 py-2 text-sm font-semibold text-[#68e7ff] transition hover:bg-[#68e7ff]/20 disabled:cursor-not-allowed disabled:opacity-40"
-          >
-            <Shuffle size={16} />
-            Random
-          </button>
+          <div className="flex gap-2">
+            <button
+              onClick={pickRandom}
+              disabled={!checkoutItems.length}
+              className="inline-flex items-center gap-2 rounded-2xl border border-[#68e7ff]/20 bg-[#68e7ff]/12 px-3 py-2 text-sm font-semibold text-[#68e7ff] transition hover:bg-[#68e7ff]/20 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              <Shuffle size={16} />
+              Random
+            </button>
+            <button
+              onClick={surpriseMe}
+              disabled={!items.length}
+              className="inline-flex items-center gap-2 rounded-2xl border border-[#c7a0ff]/20 bg-[#c7a0ff]/12 px-3 py-2 text-sm font-semibold text-[#c7a0ff] transition hover:bg-[#c7a0ff]/20 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              <Sparkles size={16} />
+              Surprise
+            </button>
+          </div>
         </div>
 
         <div className="mt-4 grid gap-3">
@@ -697,6 +721,36 @@ export default function PickerPage({ coupleId }: Props) {
                     <Trash2 size={17} />
                   </button>
                 </div>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <button
+                    onClick={() => setItineraryDateId((current) => (current === date.id ? null : date.id))}
+                    className="inline-flex items-center gap-2 rounded-xl border border-[#68e7ff]/20 bg-[#68e7ff]/12 px-3 py-2 text-xs font-semibold text-[#68e7ff]"
+                  >
+                    <Route size={15} />
+                    Generate itinerary
+                  </button>
+                  <button
+                    onClick={() => downloadCalendarFile([date], `${date.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}.ics`)}
+                    className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.045] px-3 py-2 text-xs font-semibold text-[#8d98ad]"
+                  >
+                    <CalendarPlus size={15} />
+                    Export
+                  </button>
+                </div>
+                {itineraryDateId === date.id && (
+                  <div className="mt-3 rounded-2xl border border-white/10 bg-black/20 p-3">
+                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#68e7ff]">Itinerary</p>
+                    <div className="mt-3 space-y-2">
+                      {buildItinerary(date).map((item) => (
+                        <div key={`${date.id}-${item.time}`} className="rounded-xl bg-white/[0.04] px-3 py-2">
+                          <p className="text-xs font-semibold text-[#8d98ad]">{item.time}</p>
+                          <p className="mt-0.5 text-sm font-semibold text-white">{item.title}</p>
+                          <p className="mt-1 text-xs leading-5 text-[#8d98ad]">{item.detail}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </article>
             ))
           ) : (
