@@ -83,6 +83,100 @@ body::after {
   }
 }
 
+.lava-lamp-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(9, 15, 31, 0.58), rgba(3, 4, 6, 0.96));
+}
+
+.lava-lamp-bg span {
+  position: absolute;
+  width: clamp(24rem, 34vw, 42rem);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  filter: blur(76px);
+  opacity: 0.58;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+.lava-lamp-bg span:nth-child(1) {
+  left: -12rem;
+  top: -14rem;
+  background:
+    radial-gradient(circle at 42% 42%, rgba(78, 132, 255, 0.9), transparent 52%),
+    radial-gradient(circle at 62% 58%, rgba(104, 231, 255, 0.32), transparent 58%);
+  animation: lava-corner-left 12s ease-in-out infinite alternate;
+}
+
+.lava-lamp-bg span:nth-child(2) {
+  right: -10rem;
+  top: -13rem;
+  background:
+    radial-gradient(circle at 48% 44%, rgba(125, 75, 255, 0.86), transparent 52%),
+    radial-gradient(circle at 34% 66%, rgba(255, 111, 177, 0.22), transparent 58%);
+  animation: lava-corner-right 14s ease-in-out infinite alternate;
+}
+
+.lava-lamp-bg span:nth-child(3) {
+  left: 38%;
+  bottom: -20rem;
+  width: clamp(22rem, 30vw, 38rem);
+  background: radial-gradient(circle, rgba(106, 245, 210, 0.22), transparent 62%);
+  animation: lava-bottom 18s ease-in-out infinite alternate;
+}
+
+@keyframes lava-corner-left {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  28% {
+    transform: translate3d(18vw, 8vh, 0) scale(1.12);
+  }
+  56% {
+    transform: translate3d(7vw, 18vh, 0) scale(0.92);
+  }
+  100% {
+    transform: translate3d(24vw, 2vh, 0) scale(1.06);
+  }
+}
+
+@keyframes lava-corner-right {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1.05);
+  }
+  32% {
+    transform: translate3d(-20vw, 9vh, 0) scale(0.94);
+  }
+  64% {
+    transform: translate3d(-7vw, 20vh, 0) scale(1.14);
+  }
+  100% {
+    transform: translate3d(-26vw, 3vh, 0) scale(1);
+  }
+}
+
+@keyframes lava-bottom {
+  0% {
+    transform: translate3d(-8vw, 0, 0) scale(0.95);
+  }
+  50% {
+    transform: translate3d(10vw, -10vh, 0) scale(1.12);
+  }
+  100% {
+    transform: translate3d(-2vw, -4vh, 0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lava-lamp-bg span {
+    animation: none;
+  }
+}
+
 button, input {
   font: inherit;
 }

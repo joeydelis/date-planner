@@ -73,7 +73,11 @@ export default function DashboardPage() {
 
   return (
     <main className="min-h-screen overflow-hidden text-[#edf3ff]">
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[linear-gradient(180deg,rgba(9,15,31,0.64),rgba(3,4,6,0.96))]" />
+      <div className="lava-lamp-bg" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+      </div>
 
       <header className="mx-auto max-w-6xl px-4 pt-4 md:px-6">
         <PartnerStatus coupleId={coupleId} />
