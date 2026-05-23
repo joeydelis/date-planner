@@ -1,4 +1,4 @@
-# Our Date Planner ❤️
+# Our Date Planner
 
 A mobile-first shared couple date planner built with Next.js, TypeScript, Tailwind CSS, Supabase Magic Login, invite links, favorites, a spinning picker wheel, counters, stats, and realtime list syncing.
 
